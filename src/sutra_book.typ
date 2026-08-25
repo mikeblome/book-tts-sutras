@@ -1,4 +1,3 @@
-
 // Import our custom logic
 #import "lib.typ": *
 
@@ -27,154 +26,268 @@
 
 #outline(indent: auto)
 
+// Reusable liturgical inclusions
+#let purification() = [
+#sutra-title("Purification", kanji: "懺悔文", romaji: "Sange Mon", bells: "○ ○ ○ ●")
+#in-gassho()
+
+All the evil karma ever created by me since of old, ○³ \
+on account of my beginningless greed, hatred, and ignorance, \
+born of my conduct, speech and thought, \
+I ○³ now confess ○³ openly and  fully. ●¹² ○³
+]
+
+#let ti-sarana() = [
+#sutra-title("Ti-Sarana", kanji: "三帰依", romaji: "Ti-Sarana", bells: "○ ○ ○ ●")
+#in-gassho()
+
+Buddham saranam gacchami; \
+dhammam saranam gacchami; \
+sangham saranam gacchami.
+
+I take refuge in the Buddha; \
+I take refuge in the Dharma; \
+I take refuge in the Sangha.
+
+Buddham saranam gacchami; \
+dhammam saranam gacchami; \
+sangham saranam gacchami. ○
+]
+
+#let sesshin-dedication() = [
+#sutra-title("Sesshin Dedication", kanji: "回向文", romaji: "Eko Mon")
+#in-gassho()
+
+#speaker([Leader])
+#pad(left: 1.5em)[
+#set text(size: 10pt)
+#set par(leading: 0.5em)
+Buddha nature pervades the whole universe, existing right here now. With our reciting of "The Great Prajñā pāramitā Heart Sutra" (Maka Hannya Haramita Shingyō) and the "Sho Sai Myo Kichijo Dharani," let us unite with:
+]
+
+#v(0.4em)
+
+#speaker([Assembly])
+#pad(left: 1.5em)[
+#set text(size: 9.2pt)
+#set par(leading: 0.4em)
+#grid(
+  columns: (auto, 1fr),
+  column-gutter: 1.2em,
+  row-gutter: 0.32em,
+  [● The Ancient Seven Buddhas, Dai Bussō], [],
+  [● Śākyamuni Buddha, Dai Bussō], [],
+  [● Mahaprajapati Gautami, Dai Bussō], text(style: "italic", size: 0.88em)[maha prajāpati go'tami],
+  [● Vimalakirti, Dai Bussō], text(style: "italic", size: 0.88em)[vi'mala kīrti],
+  [● Patacara, Dai Bussō], text(style: "italic", size: 0.88em)[p'ta chāra],
+  [● Bhadda Kapilani, Dai Bussō], text(style: "italic", size: 0.88em)[b'da kapilāni],
+  [● Bodhidharma, Dai Bussō], [],
+  [● Shitou Xiqian, Dai Bussō], text(style: "italic", size: 0.88em)[shure'-toe she-chwen],
+  [● Mazu Daoji, Dai Bussō], text(style: "italic", size: 0.88em)[ma'-zoo dao'-ee],
+  [● Dongshan Liangjie, Dai Bussō], text(style: "italic", size: 0.88em)[dong-shan liang-jay],
+  [● Pang Yun Jushi, Dai Bussō], text(style: "italic", size: 0.88em)[pong yun jew-sure],
+  [● Pang Lingzhao, Dai Bussō], text(style: "italic", size: 0.88em)[pong ling-jao],
+  [● Liu Tiemo, Dai Bussō], text(style: "italic", size: 0.88em)[leo tyeh'-mo],
+  [● Jishou Daojen, Dai Bussō], text(style: "italic", size: 0.88em)[jee-show dow-ren],
+  [● Dahui Zonggao, Dai Bussō], text(style: "italic", size: 0.88em)[da-whey zong-gao],
+  [● Miao Dao, Dai Bussō], text(style: "italic", size: 0.88em)[meow dow],
+  [● Miao Zong, Dai Bussō], text(style: "italic", size: 0.88em)[meow zong],
+  [● Dōgen Kigen, Dai Bussō], [],
+  [● Keizan Jokin, Dai Bussō], [],
+  [● Daiun Sogaku, Dai Bussō], [],
+  [● Hakuun Ryoko, Dai Bussō], [],
+  [● Koun Zenshin, Dai Bussō], [],
+  [● Single-Mind Aitken, Dai Bussō], [],
+  [● Dawn-Cloud Aitken, Dai Bussō], []
+)
+]
+
+#v(0.4em)
+
+#speaker([Leader])
+#pad(left: 1.5em)[
+#set text(size: 10pt)
+All founding teachers, past, present, future, Dai Bussō. \
+Let true Dharma continue, Sangha relations become complete;
+]
+
+#v(0.4em)
+
+#speaker([Assembly])
+#pad(left: 1.5em)[
+#set text(size: 10pt)
+● All Buddhas throughout space and time; ○ \
+All Bodhisattvas, Mahasattvas; ○ \
+The great Prajñā pāramitā ○
+]
+]
+
 = Opening Recitations
 
-== ○ △ ▲ Shiku Seigan Mon △
-#align(center, text(style: "italic", size: 0.95em)[(Four Infinite Vows)])
+#sutra-title("The Four Great Vows", kanji: "四弘誓願文", romaji: "Shigu Seigan Mon", bells: "○ △ ▲")
+
+#v(0.8em)
+#set text(size: 11.5pt)
+#set par(leading: 0.65em)
 
 #zh[shu|jo|mu|hen|sei|gan|do][衆|生|無|邊|誓|願|度] \ 
 #eng[All beings beyond number, I vow to free △³]
 
+#v(0.8em)
+
 #zh[bon|no|mu|jin|sei|gan|dan][煩|惱|無|盡|誓|願|斷] \ 
 #eng[Blind passions without cease, I vow to see through.]
+
+#v(0.8em)
 
 #zh[ho|mon|mu|ryo|sei|gan|gaku][法|門|無|量|誓|願|學] \ 
 #eng[Dharma gates beyond measure, I vow to realize △³].
 
+#v(0.8em)
+
 #zh[butsu|do|mu|jo|sei|gan|jo][佛|道|無|上|誓|願|成] \ 
 #eng[△ Buddha ways without △³ end, I vow to embody. △³]
+
+#v(1fr)
 
 #pagebreak()
 
 = Early Morning Sutras
 
-== ○ ○ ○ The Five Remembrances
+#sutra-title("The Five Remembrances", kanji: "五冥想", romaji: "Go Meisō", bells: "○ ○ ○")
 
 #ino_note([All O are ten seconds long.])
 
-1. ● I am of the nature to grow old. \
-There is no way to escape growing old. ○
+● I am of the nature to grow old. \
+There is no way to escape growing old. ○ \
 
-2. ● I am of the nature to have ill health. \
-There is no way to escape having ill health. ○
+● I am of the nature to have ill health. \
+There is no way to escape having ill health. ○ \
 
-³. ● I am of the nature to die. \
-There is no way to escape death. ○
+● I am of the nature to die. \
+There is no way to escape death. ○ \ 
 
-4. ● All that is dear to me and everyone I love \
+● All that is dear to me and everyone I love \
 are of the nature to change. \
-There is no way to escape being separated from them. ○
+There is no way to escape being separated from them. ○ \
 
-5. ● My actions are my only true belongings. \
+● My actions are my only true belongings. \
 I cannot escape the consequences of my actions. \
-My actions are the ground on which I stand. ○ ○ ○
-
-#pagebreak()
-
-#purification()
+My actions are the ground on which I stand. ○ ○ ○ \ 
 
 #pagebreak()
 
 = Morning Sutra Service
 
+#v(-0.6em)
+#set text(size: 10pt)
+#set par(leading: 0.55em)
+
+#purification()
+
+#v(-0.6em)
+
 #ti-sarana()
 
-#v(1.5em)
+#v(-0.6em)
 
-== ○ ○ ● Vandana
+#sutra-title("Vandana", kanji: "禮敬", romaji: "Vandanā", bells: "○ ○ ●")
 #in-gassho()
 
 Namo tassa bhagavato arahato sammasambuddhasa ○
 
 #pagebreak()
 
-== The Great Prajñā pāramitā Heart Sutra
+#sutra-title("The Great Prajñā Pāramitā Heart Sutra", kanji: "摩訶般若波羅蜜多心經", romaji: "Maka Hannya Haramita Shin Gyō")
 
 #zh[kan|ji|zai|bo|satsu|gyō|jin|han|nya|ha|ra|mit|ta|ji][觀|自|在|菩|薩|行|深|般|若|波|羅|蜜|多|時] \
 #eng[Avalokiteśvara Bodhisattva, practicing deep Prajñā pāramitā,]
 
 #zh[shō|ken|go|un|kai|kū|do|is|sai|ku|yaku][照|見|五|蘊|皆|空|度|一|切|苦|厄] \
-#eng[clearly saw that all five skandhas are empty, transforming all suffering and distress.]
+#eng[clearly saw that all five skandhas are empty, \ ]
+#eng[transforming all suffering and distress.]
 
 #zh[sha|ri|shi|shiki|fu|i|kū|kū|fu|i|shiki][舎|利|子|色|不|異|空|空|不|異|色] \
-#eng[Shariputra, form is no other than emptiness, emptiness no other than form;]
+#eng[Shariputra, form is no other than emptiness, \ ]
+#eng[emptiness no other than form;]
 
 #zh[shiki|soku|ze|kū|kū|soku|ze|shiki][色|即|是|空|空|即|是|色] \
-#eng[form is exactly emptiness, emptiness exactly form;]
+#eng[form is emptiness, emptiness is form.]
 
 #zh[ju|sō|gyō|shiki|yaku|bu|nyo|ze][受|想|行|識|亦|復|如|是] \
-#eng[sensation, perception, mental reaction, consciousness, are also like this.]
+#eng[Sensations, perceptions, formations, and consciousness are also like this.]
 
-#zh[sha|ri|shi|ze|sho|hō|kū|sō|fu|shō|fu|metsu][舎|利|子|是|諸|法|空|相|不|生|不|滅] \
-#eng[Shariputra, all things are essentially empty—not born, not destroyed;]
+#zh[sha|ri|shi|ze|sho|hō|jis|sō][舎|利|子|是|諸|法|空|相] \
+#eng[Shariputra, all dharmas are marked with emptiness;]
 
-#zh[fu|kū|fu|jō|fu|zō|fu|gen][不|垢|不|浄|不|増|不|減] \
-#eng[not stained, not pure; without loss, without gain.]
+#zh[fu|shō|fu|metsu|fu|ku|fu|jō|fu|zō|fu|gen][不|生|不|滅|不|垢|不|淨|不|增|不|減] \
+#eng[they do not appear or disappear, are not tainted or pure, \ ]
+#eng[do not increase or decrease.]
 
 #zh[ze|ko|kū|chū|mu|shiki|mu|ju|sō|gyō|shiki][是|故|空|中|無|色|無|受|想|行|識] \
-#eng[Therefore in emptiness there is no form, no sensation, perception, mental reaction, consciousness;]
+#eng[Therefore, in emptiness no form, no sensation, \ ]
+#eng[perception, formation, consciousness;]
 
 #zh[mu|gen|ni|bi|zetsu|shin|i][無|眼|耳|鼻|舌|身|意] \
-#eng[no eye, ear, nose, tongue, body, mind,]
+#eng[no eye, ear, nose, tongue, body, mind;]
 
-#zh[mu|shiki|shō|kō|mi|soku|hō][無|色|声|香|味|触|法] \
-#eng[no color, sound, scent, taste, touch, thought;]
+#zh[mu|shiki|shō|kō|mi|soku|hō][無|色|聲|香|味|觸|法] \
+#eng[no color, sound, smell, taste, touch, object of mind;]
 
 #zh[mu|gen|kai|nai|shi|mu|i|shiki|kai][無|眼|界|乃|至|無|意|識|界] \
-#eng[no seeing and so on to no thinking;]
+#eng[no realm of sight until we come to no realm of mind consciousness;]
 
-#zh[mu|mu|myō|yaku|mu|mu|myō|jin][無|無|明|亦|無|無|明|尽] \
+#zh[mu|mu|myō|yaku|mu|mu|myō|jin][無|無|明|亦|無|無|明|盡] \
 #eng[no ignorance and also no ending of ignorance,]
 
-#zh[nai|shi|mu|rō|shi|yaku|mu|rō|shi|jin][乃|至|無|老|死|亦|無|老|死|尽] \
-#eng[and so on to no old age and death and also no ending of old age and death;]
+#zh[nai|shi|mu|rō|shi|yaku|mu|rō|shi|jin][乃|至|無|老|死|亦|無|老|死|盡] \
+#eng[until we come to no old age and death and no ending of old age and death;]
 
-#zh[mu|ku|shū|metsu|dō][無|苦|集|滅|道] \
-#eng[no suffering, cause of suffering, cessation, path;]
+#zh[mu|ku|shū|metsu|dō|mu|chi|yaku|mu|toku][無|苦|集|滅|道|無|智|亦|無|得] \
+#eng[no suffering, no cause of suffering, no cessation, no path; no wisdom and no attainment.]
 
-#zh[mu|chi|yaku|mu|toku|i|mu|sho|toku|ko][無|智|亦|無|得|以|無|所|得|故] \
-#eng[no wisdom and no attainment.]
+#zh[i|mu|sho|toku|ko|bo|dai|sat|twa][以|無|所|得|故|菩|提|薩|埵] \
+#eng[With nothing to attain, a Bodhisattva]
 
-#zh[bo|dai|sat|ta|e|han|nya|ha|ra|mit|ta|ko][菩|提|薩|埵|依|般|若|波|羅|蜜|多|故] \
-#eng[Since there is nothing to attain, the Bodhisattva lives by Prajñā pāramitā,]
+#zh[e|han|nya|ha|ra|mit|ta|ko|shin|mu|kei|ge][依|般|若|波|羅|蜜|多|故|心|無|罣|礙] \
+#eng[relies on Prajñā pāramitā, and the mind is without hindrance.]
 
-#zh[shin|mu|kei|ge|mu|kei|ge|ko|mu|u|ku|fu][心|無|罣|礙|無|罣|礙|故|無|有|恐|怖] \
-#eng[with no hindrance in the mind; no hindrance and therefore no fear;]
+#zh[mu|kei|ge|ko|mu|u|ku|fu][無|罣|礙|故|無|有|恐|怖] \
+#eng[Without hindrance, there is no fear.]
 
-#zh[on|ri|is|sai|ten|dō|mu|sō|ku|gyō|ne|han][遠|離|一|切|顛|倒|夢|想|究|竟|涅|槃] \
-#eng[far beyond delusive thinking, right here is Nirvāṇa.]
+#zh[on|ri|is|sai|ten|do|mu|sō|u|ki|ne|han][遠|離|一|切|顛|倒|夢|想|究|竟|涅|槃] \
+#eng[Far beyond all confused fantasy, one realizes Nirvāṇa.]
 
-#zh[san|ze|sho|butsu|e|han|nya|ha|ra|mit|ta|ko][三|世|諸|仏|依|般|若|波|羅|蜜|多|故] \
-#eng[All Buddhas of past, present and future live by Prajñā pāramitā,]
+#zh[san|ze|sho|butsu|e|han|nya|ha|ra|mit|ta][三|世|諸|佛|依|般|若|波|羅|蜜|多] \
+#eng[All Buddhas of past, present, and future rely on Prajñā pāramitā]
 
-#zh[a|no|ku|ta|ra|san|myaku|san|bo|dai][得|阿|耨|多|羅|三|藐|三|菩|提] \
-#eng[attaining Anuttara-samyak-sambodhi.]
+#zh[ko|toku|a|noku|ta|ra|san|myaku|san|bo|dai][故|得|阿|耨|多|羅|三|藐|三|菩|提] \
+#eng[and attain Anuttara-samyak-sambodhi.]
 
-#zh[ko|chi|han|nya|ha|ra|mit|ta][故|知|般|若|波|羅|蜜|多] \
-#eng[Therefore know that Prajñā pāramitā is the great mantra, the vivid mantra,]
+#zh[ko|chi|han|nya|ha|ra|mit|ta|ze|dai|jin|shu][故|知|般|若|波|羅|蜜|多|是|大|神|咒] \
+#eng[Therefore know that Prajñā pāramitā is the great transcendent mantra,]
 
-#zh[ze|dai|jin|shu|ze|dai|myō|shu][是|大|神|呪|是|大|明|呪] \
-#eng[the unsurpassed mantra, the supreme mantra,]
+#zh[ze|dai|myō|shu|ze|mu|jō|shu|ze|mu|to|to|shu][是|大|明|咒|是|無|上|咒|是|無|等|等|咒] \
+#eng[the great bright mantra, the supreme mantra, the supreme mantra,]
 
-#zh[ze|mu|jō|shu|ze|mu|tō|dō|shu][是|無|上|呪|是|無|等|等|呪] \
-#eng[which completely removes all suffering.]
+#zh[nō|jo|is|sai|ku|shin|jitsu|fu|kō][能|除|一|切|苦|真|實|不|虛] \
+#eng[which relieves all suffering and is true, not vain.]
 
-#zh[nō|jo|is|sai|ku|shin|jitsu|fu|ko][能|除|一|切|苦|真|実|不|虚] \
-#eng[This is truth, not mere formality.]
-
-#zh[ko|setsu|han|nya|ha|ra|mit|ta|shu][故|説|般|若|波|羅|蜜|多|呪] \
+#zh[ko|setsu|han|nya|ha|ra|mit|ta|shu][故|説|般|若|波|羅|蜜|多|咒] \
 #eng[Therefore set forth the Prajñā pāramitā mantra,]
 
-#zh[soku|setsu|shu|watsu][即|説|呪|曰] \
+#zh[soku|setsu|shu|watsu][即|説|咒|曰] \
 #eng[set forth this mantra and proclaim:]
 
-#zh[gya|tei|gya|tei|ha|ra|gya|tei|ha|ra|sō|gya|tei|bo|dhi|so|waka][羯|諦|羯|諦|波|羅|羯|諦|波|羅|僧|羯|諦|菩|薩|婆|訶] \
-#eng[Gate Gate Paragate Parasamgate Bodhi Swaha!]
+#zh[gya|tei|gya|tei|ha|ra|gya|tei][羯|諦|羯|諦|波|羅|羯|諦] \
+#eng[Gate Gate Paragate]
+
+#zh[ha|ra|sō|gya|tei|bo|dhi|so|waka][波|羅|僧|羯|諦|菩|薩|婆|訶] \
+#eng[Parasamgate Bodhi Swaha!]
 
 #pagebreak()
 
-== Sho Sai Myo Kichijo Darani
-#align(center, text(style: "italic", size: 0.95em)[(Dharani for Dispelling Misfortune)])
+#sutra-title("Dharani for Dispelling Misfortune", kanji: "消災妙吉祥陀羅尼", romaji: "Shō Sai Myō Kichijō Darani", bells: "○ ○ ○ ●")
 
 #ino_note([3 times. Mokugyo throughout.])
 
@@ -187,7 +300,8 @@ Namo tassa bhagavato arahato sammasambuddhasa ○
 #zh[to|ji|to|en|gya|gya|gya|ki|gya|ki|un|nun][怛|姪|他|唵|佉|佉|佉|呬|佉|呬|吽|吽] \
 #eng[Om! The Buddha of reality, wisdom, nirvana!]
 
-#zh[shi|fu|ra|shi|fu|ra|ha|ra|shi|fu|ra|ha|ra|shi|fu|ra][入|嚩|囉|入|嚩|囉|盋|羅|入|嚩|羅|盋|羅|入|嚩|羅] \
+#zh[shi|fu|ra|shi|fu|ra][入|嚩|囉|入|嚩|囉] \
+#zh[ha|ra|shi|fu|ra|ha|ra|shi|fu|ra][盋|羅|入|嚩|羅|盋|羅|入|嚩|羅] \
 #eng[Light, light! Great light, great light!]
 
 #zh[chi|shu|sa|chi|shu|sa|shu|shi|ri|shu|shi|ri][底|瑟|姹|底|瑟|姹|瑟|致|哩|瑟|致|哩] \
@@ -204,22 +318,24 @@ Namo tassa bhagavato arahato sammasambuddhasa ○
 == Zenkai Dedication
 #in-gassho()
 
-*Leader:*
+#speaker([Leader])
+#pad(left: 1.5em)[
 Our words ring out through space beyond the stars; \
 their virtue and compassion echo back from all the many beings; \
-we recite the "Great Prajñā pāramitā Heart Sutra" \
-#text(size: 0.8em, [Or: Maka Hannya Haramita Shin Gyō]) \
+we recite the "Great Prajñā Pāramitā Heart Sutra" \
+#ino_note([Or: Maka Hannya Haramita Shin Gyō]) \
 and the "Sho Sai Myo Kichijo Darani" \
 for renewal of the Buddha-mind in fields and forests, \
 homes and streets, throughout the world, \
-in grateful thanks to all our many guides along the ancient way; \
+in grateful thanks to all our many guides along the ancient way;
+]
 
-#v(1em)
-
-*Assembly:*
+#speaker([Assembly])
+#pad(left: 1.5em)[
 ● All Buddhas throughout space and time; ○ \
 all Bodhisattvas, Mahasattvas; ○ \
 the great Prajñā pāramitā ○.
+]
 
 #pagebreak()
 
@@ -229,18 +345,17 @@ the great Prajñā pāramitā ○.
 
 = Service Sutras
 
-== ○ ● Tōrei Zenji: Bodhisattva's Vow ○
+#sutra-title("Tōrei Zenji: Bodhisattva's Vow", kanji: "菩薩誓願", romaji: "Bodaisatta Seigan", bells: "○ ●")
 #in-gassho()
 
-*Leader:* \
-
+#speaker([Leader])
+#pad(left: 1.5em)[
 I am only a simple disciple, ○ \ 
-but I offer these respectful words: \
+but I offer these respectful words:
+]
 
-#v(1em)
-
-*Assembly:* \ 
-
+#speaker([Assembly])
+#pad(left: 1.5em)[
 When I regard the true nature of the many dharmas, \
 I find them all to be sacred forms \
 of the Tathagata's never-failing essence. \
@@ -248,14 +363,18 @@ Each particle of matter, each moment, \
 is no other than the Tathagata's inexpressible radiance. \
 With this realization, our virtuous ancestors, \
 with compassionate minds and hearts, \
-gave tender care to beasts and birds. \
+gave tender care to beasts and birds.
+
+#v(0.6em)
 
 Among us, in our own daily lives, \
 who is not reverently grateful for the protections of life: \
 food, drink, and clothing! \
 Though they are inanimate things, \
 they are nonetheless the warm flesh and blood, \
-the merciful incarnations of Buddha. \
+the merciful incarnations of Buddha.
+
+#v(0.6em)
 
 All the more, we can be especially sympathetic \
 and affectionate with foolish people, \
@@ -267,7 +386,9 @@ from the mean-spirited delusions that we have built up \
 with our wrongful conduct from the beginningless past. \
 With our response to such abuse \
 we completely relinquish ourselves \
-and the most profound and pure faith arises. \
+and the most profound and pure faith arises.
+
+#v(0.6em)
 
 At the peak of each thought a lotus flower opens, \
 and on each flower there is revealed a Buddha. \
@@ -278,19 +399,19 @@ May we retain this mind \
 and extend it throughout the world ○ \
 so that we and all beings ○ \
 become mature in Buddha's wisdom. ○
+]
 
 #pagebreak()
 
-== ○ ● × Enmei Jikku Kannon Gyo ○
-#align(center)[
-  #text(size: 1.05em)[延命十句觀音經] \
-  #text(size: 0.9em, style: "italic")[Ten-Clause Kannon Sutra for Prolonging Life]
-]
+#sutra-title("Ten-Line Kannon Sutra", kanji: "延命十句觀音經", romaji: "Enmei Jikku Kannon Gyō", bells: "○ ● ×")
 #in-gassho()
 
 #ino_note([Mokugyo throughout])
 
-#set par(spacing: 0.6em)
+#set text(size: 10.5pt)
+#show par: it => block(below: 0.65em, it)
+#set par(leading: 0.55em)
+
 #zh[kan|ze|on|na|mu|butsu][觀|世|音|南|無|佛] \
 #eng[Kanzeon! I bow before the Buddha;]
 
@@ -320,47 +441,71 @@ become mature in Buddha's wisdom. ○
 
 #pagebreak()
 
+#v(1fr)
+
 == Dedication
 #in-gassho()
+
+#v(0.8em)
+#set text(size: 10.5pt)
+#set par(leading: 0.6em)
 
 The Buddha and his teachers and his many sons and daughters
 turn the Dharma wheel to show the wisdom of the stones and clouds;
 we dedicate the virtues of reciting Tōrei Zenji's Bodhisattva's Vow and the Enmei Jikku Kannon Gyo to:
+
+#pad(left: 1.8em)[
 - Choro Nyogen, Dai Bussō
 - Hannya Gempo, Dai Bussō
 - Mita Soen, Dai Bussō
+]
+
 and to our relatives and companions of the past who rest in deepest samadhi;
 
-#v(1em)
-
-*All:*
+#speaker([All])
+#pad(left: 1.5em)[
 ● All Buddhas throughout space and time; ○ \
 all Bodhisattvas, Mahasattvas; ○ \
 the great prajna paramita ○
+]
+
+#v(1fr)
 
 #pagebreak()
 
 = Teisho Sutras
 
-== ○ ○ ○ ● On Opening the Dharma ○
+#v(1fr)
+
+#sutra-title("On Opening the Dharma", kanji: "開經偈", romaji: "Kaikyōge", bells: "○ ○ ○ ●")
 #in-gassho()
 
 #ino_note([If you remain in your place during Teisho, use the Daikeisu (big bell). If you move your seat for Teisho, take the inkin with you and use that.])
 
+#v(0.8em)
+#set text(size: 11pt)
+#set par(leading: 0.7em, justify: false)
+
 The dharma, incomparably profound and minutely subtle, ●³ \
-Is rarely encountered, even in hundreds of thousands of millions of ages; \
+Is rarely encountered, \
+even in hundreds of thousands of millions of ages; \
 We now can see it, hear it, accept and hold it; \
 May we ● completely realize the true ● meaning \
-Of the Tathagata ●¹² ○³ \ 
+Of the Tathagata ●¹² ○³
+
+#v(1fr)
 
 #pagebreak()
 
 = Evening Sutra Service
-_in gassho_
 
-== ○ ○ ○ ● Hakuin Zenji: Song of Zazen ○
+#sutra-title("Song of Zazen", kanji: "坐禅讃", romaji: "Hakuin Zenji: Zazen Wasan", bells: "○ ○ ○ ●")
+#in-gassho()
 
-All#footnote[Translation and copyright by Lew Richmond and Kazuaki Tanahashi. See #cite(<richmond1985moon>, form: "prose"). Adapted by Three Treasures Sangha, 2005.] beings by nature are Buddha, \
+#show par: it => block(below: 1.4em, it)
+#set par(leading: 0.65em)
+
+All beings by nature are Buddha, \
 As ice by nature is water. \
 Apart from water there is no ice; \
 Apart from beings, no Buddha.
@@ -386,7 +531,7 @@ All have their source in zazen.
 Those who try zazen even once \
 Wipe away beginningless crimes. \
 Where are all the dark paths then? \
-The Pure Land itself is near
+The Pure Land itself is near.
 
 Those who hear this truth even once \
 And listen with a grateful heart, \
@@ -413,31 +558,37 @@ Nirvāṇa is right here, before our eyes; ○ \
 This very place is the Lotus Land; ○ \
 This very body, the Buddha. ○ \ 
 
+#pagebreak()
+
 == Dedication
-_in gassho_ 
+#in-gassho()
 
-*Ino:* \
-
+#speaker([Ino])
+#pad(left: 1.5em)[
 The sky of Samadhi and the moonlight of wisdom are the temple of our practice; our friends and family members guide us as we walk the ancient path; we dedicate the virtues of reciting Hakuin Zenji's Song of Zazen to:
 
 - Linji Yixuan Dai Bussō [ leen-gee ee-shwen ] 
 - Hakuin Ekaku, Dai Bussō 
 
 and to the guardians of the Dharma and the protectors of our sacred hall.
+]
 
-*Assembly:* \
-
-● All Buddhas throughout space and time, ○
-All Bodhisattvas, Mahasattvas, ○
+#speaker([Assembly])
+#pad(left: 1.5em)[
+● All Buddhas throughout space and time, ○ \
+All Bodhisattvas, Mahasattvas, ○ \
 The great Prajñā pāramitā. ○
+]
 
 #pagebreak()
 
 = Readings from Dogen
 
-== Zazen Universally Recommended
+#sutra-title("Zazen Universally Recommended", kanji: "普勧坐禅儀", romaji: "Fukan Zazengi")
 
-Fundamentally#footnote[Version by Robert Aitken, based on the translation by Carl Bielefeldt. See #cite(<bielefeldt1988dogens>, form: "prose").] speaking, the basis of the Way is perfectly pervasive. How could it be contingent on practice and verification? The vehicle of the Ancestors is naturally unrestricted. Why should we expend sustained effort? Surely the whole being is far beyond defilement; who could believe in a method to polish it? It is never apart from this very place; what is the use of a pilgrimage to practice it? And yet, with just a hair's breadth of distinction, the gap is like that between heaven and earth. Once the slightest like or dislike arises, all is confused and the mind is lost. You should know that repeated migrations through eons of time depend on a single moment's reflection; losing your way in this world of defilement derives from your failure to stop deliberation. If you wish to transcend the extreme beyond, just directly accede to the Way.
+#set par(first-line-indent: 1.8em, leading: 0.65em, spacing: 1.0em, justify: true)
+
+Fundamentally speaking, the basis of the Way is perfectly pervasive. How could it be contingent on practice and verification? The vehicle of the Ancestors is naturally unrestricted. Why should we expend sustained effort? Surely the whole being is far beyond defilement; who could believe in a method to polish it? It is never apart from this very place; what is the use of a pilgrimage to practice it? And yet, with just a hair's breadth of distinction, the gap is like that between heaven and earth. Once the slightest like or dislike arises, all is confused and the mind is lost. You should know that repeated migrations through eons of time depend on a single moment's reflection; losing your way in this world of defilement derives from your failure to stop deliberation. If you wish to transcend the extreme beyond, just directly accede to the Way.
 
 Though you might be proud of your understanding and replete with insight, having gotten hold of the wisdom that knows at a glance, though you may have attained the Way and clarified the Mind, giving rise to the spirit that assaults the heavens, you may still be loitering near the entrance, lacking something of the vital path of liberation. Even in the case of the Buddha, innately wise though he was, we see traces of his six years of sitting erect, and in the case of Bodhidharma, though he succeeded to the Mind seal, we still hear of his famous nine years facing the wall. When even the ancient sages practiced like this, how could people today dispense with pursuing the Way? Therefore, stop your intellectual exercise of investigating words and chasing after talk; study the reverse way, turn the light and shine it back. Body and mind will drop away of themselves, and your original face will appear. If you want such an experience, exert yourselves urgently.
 
@@ -461,9 +612,11 @@ Eminent students of the Dharma, you are long accustomed to groping for the eleph
 
 #pagebreak()
 
-== Actualizing the Fundamental Point
+#sutra-title("Actualizing the Fundamental Point", kanji: "現成公案", romaji: "Genjōkōan")
 
-When#footnote[Translation and copyright by Paul Jaffe. See #cite(<jaffe1996flowers>, form: "prose").] all dharmas are the Buddha-dharma, there are delusion and enlightenment, practice, birth, death, buddhas, and sentient beings. When the myriad dharmas all are without self, there is no delusion, no enlightenment, no buddhas, no sentient beings, no birth, and no death. Since originally the Buddha way goes beyond abundance and scarcity, there are birth and death, delusion and enlightenment, sentient beings and buddhas.
+#set par(first-line-indent: 1.8em, leading: 0.65em, spacing: 1.0em, justify: true)
+
+When all dharmas are the Buddha-dharma, there are delusion and enlightenment, practice, birth, death, buddhas, and sentient beings. When the myriad dharmas all are without self, there is no delusion, no enlightenment, no buddhas, no sentient beings, no birth, and no death. Since originally the Buddha way goes beyond abundance and scarcity, there are birth and death, delusion and enlightenment, sentient beings and buddhas.
 
 Yet, though it is like this, simply, flowers fall amid our longing and weeds spring up amid our antipathy. Carrying the self forward to confirm [the existence of] the myriad dharmas is delusion. The myriad dharmas advancing and confirming [the existence of] the self is realization. Those who have great realization about delusion are buddhas. Those who are greatly deluded within realization are sentient beings. Further, there are people who attain realization upon realization and people who are deluded within delusion.
 
@@ -493,9 +646,11 @@ The true experience of the Buddha-dharma and its living way of correct transmiss
 
 #pagebreak()
 
-== The Four Virtues of a Bodhisattva
+#sutra-title("The Four Virtues of a Bodhisattva", kanji: "菩薩四攝法", romaji: "Bodaisatta Shishōbō")
 
-The#footnote[Translation and copyright by Lew Richmond and Kazuaki Tanahashi. See #cite(<richmond1985moon>, form: "prose"). Adapted by Three Treasures Sangha, 2005.] bodhisattva's four methods of guidance are giving, kind speech, beneficial action, and cooperation.
+#set par(first-line-indent: 1.8em, leading: 0.65em, spacing: 1.0em, justify: true)
+
+The bodhisattva's four methods of guidance are giving, kind speech, beneficial action, and cooperation.
 
 "Giving" means non-greed. Non-greed means not to crave. Not to crave means not to curry favor. Even if you govern the Four Continents, you should always convey the correct teaching with non-greed. It is to give away unneeded belongings to someone you don't know, to offer flowers blooming on a distant mountain to the Tathagata, or, again, to offer treasures you had in your former life to sentient beings. Whether it is of teaching or of material, in each case we are originally endowed with the virtue that accompanies giving. The question is not whether the gift is cheap or small, because its merit is still authentic.
 
@@ -529,21 +684,25 @@ The Guanzi says, "The sea does not refuse water because of its identity with wat
 
 With a gentle expression, practice cooperation for all people. Each of these four methods of guidance includes all four. Thus, there are sixteen methods of guiding sentient beings.
 
+#pagebreak()
+
 = General Readings
 
-== ○ ● Dai-o Kokushi: On Zen ○
+#sutra-title("On Zen", kanji: "大應國師法語", romaji: "Dai-ō Kokushi: Hōgo", bells: "○ ●")
+
+#show par: it => block(below: 1.4em, it)
 
 There is a reality even prior to heaven and earth; \
 Indeed, it has no form, much less a name; \
 Eyes fail to see it; it has no voice for ears to detect. \
 To call it Mind or Buddha violates its nature \
-For it then becomes like a visionary flower in the air. \
+For it then becomes like a visionary flower in the air.
 
 It is not Mind, nor Buddha; \
 Absolutely quiet and yet illuminating in a mysterious way, \
 It allows itself to be perceived only by the clear-eyed. \
 It is Dharma, truly beyond form and sound; \
-It is Dao, having nothing to do with words. \
+It is Dao, having nothing to do with words.
 
 Wishing to entice the blind, \
 The Buddha has playfully let words escape his golden mouth; \
@@ -555,13 +714,15 @@ For then you may come to recognize this ○
 
 #pagebreak()
 
-== ○ ● Song of Enlightenment ○
+#sutra-title("Song of Enlightenment", kanji: "證道歌", romaji: "Shōdōka", bells: "○ ●")
 
-There#footnote[Attributed to Yǒngjiā Xuānjué (d. 713). Translation and revisions by Robert Aitken. See #cite(<aitken1991song>, form: "prose").] is the leisurely one, \
+#show par: it => block(below: 1.4em, it)
+
+There is the leisurely one, \
 walking the Dao, beyond philosophy, \
 not avoiding fantasy, not seeking truth. \
 The real nature of ignorance is the Buddha-nature itself; \
-the empty delusory body is the very body of the Dharma. \
+the empty delusory body is the very body of the Dharma.
 
 When the Dharma body awakens completely, \
 there is nothing at all. \
@@ -570,67 +731,69 @@ is the Buddha of innocent truth. \
 Mental and physical reactions come and go \
 like clouds in the empty sky; \
 greed, hatred and ignorance appear and disappear \
-like bubbles on the surface of the sea. \
+like bubbles on the surface of the sea.
 
 When we realize actuality, \
 there is no distinction between mind and thing \
 and the path to hell instantly vanishes. \
 If this is a lie to fool the world, \
-my tongue may be cut out forever. \
+my tongue may be cut out forever.
 
 Once we awaken to the Tathagata-Zen, \
 the six noble deeds and the ten thousand good actions \
 are already complete within us. \
 In our dream we see the six levels of illusion clearly; \
-After we awaken the whole universe is empty. \
+After we awaken the whole universe is empty.
 
 No bad fortune, no good fortune, no loss, no gain; \
 never seek such things in eternal serenity. \
 For years the dusty mirror has gone uncleaned, \
-now let us polish it completely, once and for all. \
+now let us polish it completely, once and for all.
 
 Who has no-thought? Who is not-born? \
 If we are truly not-born, we are not un-born either. \
-Ask a robot if this is not so. \
+Ask a robot if this is not so.
+
 How can we realize ourselves \
-by virtuous deeds or by seeking the Buddha? \
+by virtuous deeds or by seeking the Buddha?
 
 Release your hold on earth, water, fire, wind; \
 drink and eat as you wish in eternal serenity. \
 All things are transient and completely empty; \
-this is the great enlightenment of the Tathagata. \
+this is the great enlightenment of the Tathagata.
 
 Transience, emptiness and enlightenment— \
 these are the ultimate truths of Buddhism; \
 keeping and teaching them is true Sangha devotion. \
-If you don't agree, please ask me about it. \
+If you don't agree, please ask me about it.
+
 Cut out directly the root of it all: \
 this is the very point of the Buddha-seal. \
-I can't respond to any concern about leaves and branches. \
+I can't respond to any concern about leaves and branches.
 
 People do not recognize the Mani-jewel. \
 Living intimately within the Tathāgata-garbha, \
 it operates our sight, hearing, smell, taste, sensation, awareness; \
-and all of these are empty, yet not empty. \
+and all of these are empty, yet not empty.
 
 The rays shining from this perfect Mani-jewel \
 have the form of no form at all. \
 Clarify the five eyes and develop the five powers; \
 this is not intellectual work—just realize, just know. \
 It is not difficult to see images in a mirror, \
-but who can take hold of the moon in the water? \
+but who can take hold of the moon in the water?
 
 Always working alone, always walking alone, \
 the enlightened one walks the free way of Nirvāṇa \
 with melody that is old and clear in spirit \
 and naturally elegant in style, \
 but with body that is tough and bony, \
-passing unnoticed in the world. \
+passing unnoticed in the world.
 
 We know that Shakya's sons and daughters \
 are poor in body, but not in the Dao. \
 In their poverty, they always wear ragged clothing, \
-but they have the jewel of no price treasured within. \
+but they have the jewel of no price treasured within.
 
 The jewel of no price can never be used up \
 though they spend it freely to help people they meet. \
@@ -638,52 +801,51 @@ Dharmakaya, Sambhogakaya, Nirmanakaya, \
 and the four kinds of wisdom \
 are all contained within. \
 The eight kinds of emancipation and the six universal powers \
-are all impressed on the ground of their mind. \
+are all impressed on the ground of their mind.
 
 The best student goes directly to the ultimate; \
 the others are very learned but their faith is uncertain. \
 Remove the dirty garments from your own mind; \
-why should you show off your outward striving? \
+why should you show off your outward striving?
 
 Some may slander, some may abuse; \
 they try to set fire to the heavens with a torch \
 and end by merely tiring themselves out. \
 I hear their scandal as though it were ambrosial truth; \
 immediately everything melts \
-and I enter the place beyond thought and words \
+and I enter the place beyond thought and words.
 
 When I consider the virtue of abusive words, \
 I find the scandal-monger is my good teacher. \
 If we do not become angry at gossip, \
-we have no need for powerful endurance and compassion. \
+we have no need for powerful endurance and compassion.
 
 To be mature in Zen is to be mature in expression, \
 and full-moon brilliance of dhyana and prajna \
 does not stagnate in emptiness. \
 Not only can I take hold of complete enlightenment by myself, \
 but all Buddha-bodies, like sands of the Ganges, \
-can become awakened in exactly the same way. \
+can become awakened in exactly the same way.
 
 The incomparable lion-roar of the doctrine \
 shatters the brains of the one hundred kinds of animals. \
 Even the king of elephants will run away, forgetting his pride; \
-only the heavenly dragon listens calmly, with pure delight. \
+only the heavenly dragon listens calmly, with pure delight.
 
 I wandered over rivers and seas, crossing mountains and streams, \
 visiting teachers, asking about the Way in personal interviews; \
 since I recognized the Sixth Founding Teacher at Caoqi, \
-
-I know what is beyond the relativity of birth and death. \
+I know what is beyond the relativity of birth and death.
 
 Walking is Zen, sitting is Zen; \
 speaking or silent, active or quiet, the essence is at peace. \
 Even facing the sword of death, our mind is unmoved; \
-even drinking poison, our mind is quiet. \
+even drinking poison, our mind is quiet.
 
 Our teacher, Śākyamuni, met Dipankara Buddha \
 and for many eons he trained as Kshanti, the ascetic. \
 Many births, many deaths; \
-I am serene in this cycle—there is no end to it. \
+I am serene in this cycle—there is no end to it.
 
 Since I abruptly realized the unborn, \
 I have had no reason for joy or sorrow \
@@ -692,7 +854,7 @@ I have entered the deep mountains to silence and beauty; \
 in a profound valley beneath high cliffs, \
 I sit under the old pine trees. \
 Zazen in my rustic cottage \
-is peaceful, lonely and truly comfortable. \
+is peaceful, lonely and truly comfortable.
 
 When you truly awaken, \
 you have no formal merit. \
@@ -701,7 +863,7 @@ you cannot find such freedom. \
 Self-centered merit brings the joy of heaven itself, \
 but is like shooting an arrow at the sky; \
 when the force is exhausted, it falls to the earth, \
-and then everything goes wrong. \
+and then everything goes wrong.
 
 Why should this be better than the true way of the absolute, \
 directly penetrating the ground of Tathagata? \
@@ -710,69 +872,69 @@ and never mind the branches. \
 It is like a treasure-moon \
 enclosed in a beautiful emerald. \
 Now I understand this Mani-jewel \
-and my gain is the gain of everyone endlessly. \
+and my gain is the gain of everyone endlessly.
 
 The moon shines on the river, \
 the wind blows through the pines. \
 Whose providence is this long beautiful evening? \
 The Buddha-nature jewel of morality \
 is impressed on the ground of my mind, \
-and my robe is the dew, the fog, the cloud and the mist. \
+and my robe is the dew, the fog, the cloud and the mist.
 
 A bowl once calmed dragons \
 and a staff separated fighting tigers; \
 the rings on this staff jingle musically. \
 The form of these expressions is not to be taken lightly; \
 the treasure-staff of the Tathagata \
-has left traces for us to follow. \
+has left traces for us to follow.
 
 The awakened one does not seek truth— \
 does not cut off delusion. \
 Truth and delusion are both vacant and without form, \
 but this no-form is neither empty nor not empty; \
-it is the truly real form of the Tathagata. \
+it is the truly real form of the Tathagata.
 
 The mind-mirror is clear, so there are no obstacles. \
 Its brilliance illuminates the universe \
 to the depths and in every grain of sand. \
 Multitudinous things of the cosmos \
 are all reflected in the mind, \
-and this full clarity is beyond inner and outer. \
+and this full clarity is beyond inner and outer.
 
 To live in nothingness is to ignore cause and effect; \
 this chaos leads only to disaster. \
 The one who clings to vacancy, rejecting the world of things, \
-escapes from drowning but leaps into the fire. \
+escapes from drowning but leaps into the fire.
 
 Holding truth and rejecting delusion— \
 these are but skillful lies. \
 Students who do zazen by such lies \
-love thievery in their own children. \
+love thievery in their own children.
 
 They miss the Dharma-treasure; \
 they lose accumulated power; \
 and this disaster follows directly upon dualistic thinking. \
 So Zen is the complete realization of mind, \
 the complete cutting off of delusion, \
-the power of wise vision penetrating directly to the unborn. \
+the power of wise vision penetrating directly to the unborn.
 
 Students of vigorous will hold the sword of wisdom; \
 the prajna edge is a diamond flame. \
 It not only cuts off useless knowledge, \
-but also exterminates delusions. \
+but also exterminates delusions.
 
 They roar with Dharma-thunder; \
 they strike the Dharma-drum; \
 they spread clouds of love, and pour ambrosial rain. \
 Their giant footsteps nourish limitless being; \
 Shravaka, Pratyeka, Bodhisattva—all are enlightened; \
-five kinds of human nature—all are emancipated. \
+five kinds of human nature—all are emancipated.
 
 High in the Himalayas, only fei-ni grass grows. \
 Here cows produce pure and delicious milk, \
 and this food I continually enjoy. \
 One complete nature passes to all natures; \
-one universal Dharma encloses all Dharmas. \
+one universal Dharma encloses all Dharmas.
 
 One moon is reflected in many waters; \
 all the water-moons are from the one moon. \
@@ -781,25 +943,25 @@ and my nature becomes one with the Tathagata. \
 One level completely contains all levels; \
 it is not matter, mind, nor activity. \
 In an instant eight-thousand teachings are fulfilled; \
-in a twinkling the evil of eons is destroyed. \
+in a twinkling the evil of eons is destroyed.
 
 All categories are no category; \
 what relation have these to my insight? \
 Beyond praise, beyond blame \
-like space itself it has no bounds. \
+like space itself it has no bounds.
 
 Right here it is eternally full and serene, \
 if you search elsewhere, you cannot see it. \
 You cannot grasp it, you cannot reject it; \
 in the midst of not gaining, \
-in that condition you gain it. \
+in that condition you gain it.
 
 It speaks in silence, \
 in speech you hear its silence. \
 The great way has opened and there are no obstacles. \
 If someone asks, "what is your sect \
 and how do you understand it?" \
-I reply, "the power of tremendous prajna." \
+I reply, "the power of tremendous prajna."
 
 People say it is positive; \
 people say it is negative; \
@@ -807,19 +969,20 @@ but they do not know. \
 A smooth road, a rough road— \
 even heaven cannot imagine. \
 I have continued my zazen for many eons; \
-I do not say this to confuse you. \
+I do not say this to confuse you.
 
 I raise the Dharma-banner and set fourth our teaching; \
 it is the clear doctrine of the Buddha \
 which I found with my teacher, Huineng. \
 Mahakasyapa became the Buddha successor, \
-received the lamp and passed it on. \
+received the lamp and passed it on.
+
 Twenty-eight generations of teachers in India, \
 then over seas and rivers to our land \
 Bodhidharma came as our own first founder, \
 and his robe, as we all know, pass through six teachers here. \
 And how many generations to come may gain the path, \
-no one knows. \
+no one knows.
 
 The truth is not set forth; \
 the false is basically vacant. \
@@ -827,40 +990,40 @@ Put both existence and non-existence aside; \
 then even non-vacancy is vacant. \
 The twenty kinds of vacancy have no basis, \
 and the oneness of the Tathagata-being \
-is naturally sameness. \
+is naturally sameness.
 
 Mind is the base, phenomena are dust; \
 yet both are like a flaw in the mirror. \
 When the flaw is brushed aside, \
 the light begins to shine. \
 When both mind and phenomena are forgotten, \
-then we become naturally genuine. \
+then we become naturally genuine.
 
 Ah, the degenerate materialistic world! \
 People are unhappy; they find self-control difficult. \
 In the centuries since Śākyamuni, false views are deep, \
-demons are strong, the Dharma is weak, disturbances are many. \
+demons are strong, the Dharma is weak, disturbances are many.
 
 People hear the Buddha's doctrine of immediacy, \
 and if they accept it, the demons will be crushed \
 as easily as a roofing tile. \
-But they cannot accept. What a pity! \
+But they cannot accept. What a pity!
 
 Your mind is the source of action; \
 your body is the agent of calamity; \
 no pity nor blame to anyone else. \
 If you don't seek an invitation to hell, \
-never slander the Tathagata's true teaching. \
+never slander the Tathagata's true teaching.
 
 In the sandalwood forest, there is no other tree. \
 Only the lion lives in such deep luxurant woods, \
 wandering freely in a state of peace. \
-Other animals and birds stay far away. \
+Other animals and birds stay far away.
 
 Just baby lions follow the parent, \
 and three-year-olds already roar loudly. \
 How can the jackal pursue the king of the Dharma \
-even with a hundred-thousand demonic arts? \
+even with a hundred-thousand demonic arts?
 
 The Buddha's doctrine of directness \
 is not a matter for human emotion. \
@@ -868,13 +1031,13 @@ If you doubt this or feel uncertain, \
 then you must discuss it with me. \
 This is not the free rein of a mountain monk's ego. \
 I fear your training may lead to wrong views \
-of permanent soul or complete extinction. \
+of permanent soul or complete extinction.
 
 Being is not being; non-being is not non-being; \
 miss this rule by a hair, \
 and you are off by a thousand miles. \
 Understanding it, the dragon-child abruptly attains Buddhahood; \
-misunderstanding it, the greatest scholar falls into hell. \
+misunderstanding it, the greatest scholar falls into hell.
 
 From my youth I piled studies upon studies, \
 in sutras and shastras I searched and researched, \
@@ -883,24 +1046,24 @@ I entered the sea to count the sands in vain \
 and then the Tathagata scolded me kindly \
 as I read "What profit in counting your neighbor's treasure?" \
 My work had been scattered and entirely useless, \
-for years I was dust blown by the wind. \
+for years I was dust blown by the wind.
 
 If the seed-nature is wrong, misunderstandings arise, \
 and the Buddha's doctrine of immediacy cannot be attained. \
 Shravaka and Pratyeka students may study earnestly \
 but they lack aspiration. \
 Others may be very clever, \
-but they lack prajna. \
+but they lack prajna.
 
 Stupid ones, childish ones, \
 they suppose there is something in an empty fist. \
 They mistake the pointing finder for the moon. \
-They are idle dreamers lost in form and sensation. \
+They are idle dreamers lost in form and sensation.
 
 Not supposing something is the Tathagata, \
 this is truly called Guanyin, the Bodhisattva who sees freely. \
 When awakened we find karmic hindrances fundamentally empty \
-but when not awakened, we must repay all our debts. \
+but when not awakened, we must repay all our debts.
 
 The hungry are served a king's repast; \
 and they cannot eat. \
@@ -909,44 +1072,44 @@ why don't they recover? \
 The practice of Zen in this greedy world— \
 this is the power of wise vision. \
 The lotus lives in the midst of the fire; \
-it is never destroyed. \
+it is never destroyed.
 
 Pradhanashura broke the gravest precepts; \
 but he went on to realize the unborn. \
 The Buddhahood he attained in that moment \
-lives with us now in our time. \
+lives with us now in our time.
 
 The incomparable lion roar of the doctrine! \
 How sad that people are stubbornly ignorant, \
 just knowing that crime blocks enlightenment, \
-not seeing the secret of the Tathagata teaching. \
+not seeing the secret of the Tathagata teaching.
 
 Two monks were guilty of murder and carnality. \
 Their leader, Upali, had the light of a glow-worm; \
 he just added to their guilt. \
 Vimalakirti cleared their doubts at once \
-as sunshine melts the frost and snow. \
+as sunshine melts the frost and snow.
 
 The remarkable power of emancipation \
 works wonders innumerable as the sands of the Ganges. \
 To this we offer clothing, food, bedding, medicine. \
 Ten thousand pieces of gold are not sufficient; \
-they you break your body \
+though you break your body \
 and your bones become powder, \
 this is not enough for repayment. \
-One vivid word surpasses millions of years of practice. \
+One vivid word surpasses millions of years of practice.
 
 The King of the Dharma deserves our highest respect. \
 Tathagatas, innumerable as sands of the Ganges, \
 all prove this fact by their attainment. \
 Now I know what the Mani-jewel is: \
-those who believe this will gain it accordingly. \
+those who believe this will gain it accordingly.
 
 When we see truly, there is nothing at all. \
 There is no person; there is no Buddha. \
 Innumerable things of the universe \
 are just bubbles on the sea. \
-Wise sages are all like flashes of lightning. \
+Wise sages are all like flashes of lightning.
 
 However the burning iron ring revolves about my head, \
 with bright completeness of dhyana and prajna, \
@@ -954,289 +1117,334 @@ I never lose my equanimity . \
 If the sun becomes cold, and the moon hot, \
 evil cannot shatter the truth. \
 The carriage of the elephant moves like a mountain, \
-how can the mantis block the road? \
+how can the mantis block the road?
 
 The great elephant does not loiter on the rabbit's path. \
 Great enlightenment is not concerned with details. \
 Don't belittle the sky by looking through a pipe. \
-If you still don't understand, I will settle it for you. \
+If you still don't understand, I will settle it for you. ○
 
+#pagebreak()
 
-== ○ ● The Coincidence of Opposites ○
+#sutra-title("The Coincidence of Opposites", kanji: "參同契", romaji: "Sandōkai", bells: "○ ●")
 
-The#footnote[Attributed to Shītou Xīqiān (700–790). Translation and copyright by Nelson Foster and Jack Shoemaker. See #cite(<foster1996roaring>, form: "prose").] mind of the great sage of India \
+#show par: it => block(below: 1.4em, it)
+
+The mind of the great sage of India \
 was intimately conveyed from west to east. \
 Though people may be sharp-witted or dull, \
-there's no north and south in the Way. \
+there's no north and south in the Way.
+
 The deep spring sparkles in the pure light, \
 its branches streaming through the darkness. \
 Grasping at phenomena is the source of delusion; \
-uniting with the absolute falls short of awakening. \
+uniting with the absolute falls short of awakening.
+
 All of the senses, all the things sensed, \
 they interact without interaction. \
 Interacting, they permeate one another, \
-yet each remains in its own place. \
+yet each remains in its own place.
+
 By nature, forms differ in shape and appearance. \
 By nature, sounds bring pleasure or pain. \
 In darkness, the fine and mediocre accord; \
-brightness makes clear and murky distinct. \
+brightness makes clear and murky distinct.
+
 Each element comes back to its own nature \
 just as a child finds its own mother. \
 Fire is hot, the wind blows, water is wet and earth solid, \
 eyes see forms, ears hear sounds, noses smell, \
-tongues tell salty from sour—so it is with everything everywhere. \
+tongues tell salty from sour—so it is with everything everywhere.
+
 The root puts forth each separate shoot. \
 Both root and shoot go back to the fundamental fact. \
 Exalted and lowly is just a matter of words. \
 In the very midst of light, there is darkness; \
-don't meet another in darkness. \
+don't meet another in darkness.
+
 In the very midst of darkness, there is light; \
 don't observe another in the light. \
 Light and darkness complement each other \
-like the foot before and the food behind in walking, \
+like the foot before and the foot behind in walking, \
 Each of the myriad things has its particular virtue \
-inevitably expressed in its use and station. \
+inevitably expressed in its use and station.
+
 Phenomena accord with the fundamental as a lid fits a box; \
 the fundamental meets phenomena like arrows in mid-air. \
 Hearing these words, understand the fundamental; \
-don't cook up principles from your own ideas. \
+don't cook up principles from your own ideas.
+
 If you overlook the Way right before your eyes, \
 how will you know the path beneath your feet? \
 Advancing has nothing to do with near and far, \
 yet delusion creates obstacles high and wide. \
 Students of the mystery, ○ I humbly urge you, \
-don't waste ○ a moment, night or day! ○ \
+don't waste ○ a moment, night or day! ○
 
-== ○ ● Song of the Grass-Roof Hermitage ○
+#pagebreak()
 
-I#footnote[Attributed to Shītou Xīqiān (700–790). Translation and copyright by Taigen Dan Leighton. See #cite(<leighton1987cultivating>, form: "prose").] built a grass hut where there's nothing of value. \
+#sutra-title("Song of the Grass-Roof Hermitage", kanji: "草庵歌", romaji: "Sōan-ka", bells: "○ ●")
+
+#show par: it => block(below: 1.4em, it)
+
+I built a grass hut where there's nothing of value. \
 After eating, I relax and enjoy a nap. \
 When it was completed, fresh weeds appeared. \
-Now it's been lived in—covered by weeds. \
+Now it's been lived in—covered by weeds.
 
 The person in the hut lives here calmly, \
 not stuck to inside, outside, or in between. \
 Places worldly people live, s/he doesn't live. \
-Realms worldly people love, s/he doesn't love. \
+Realms worldly people love, s/he doesn't love.
+
 Though the hut is small, it includes the entire world. \
 In ten feet square, an old one illumines forms and their nature. \
 A Great Vehicle bodhisattva trusts without doubt. \
 The middling or lowly can't help wondering: \
-Will this hut perish or not? \
+Will this hut perish or not?
+
 Perishable or not, the original master is present, \
 not dwelling south or north, east or west. \
-
 Firmly based on steadiness, it can't be surpassed. \
 A shining window below the green pines— \
-jade palaces or vermilion towers can't compare with it. \
+jade palaces or vermilion towers can't compare with it.
+
 Just sitting with head covered all things are at rest. \
 Thus, this mountain monk doesn't understand at all. \
 Living here s/he no longer works to get free. \
-Who would proudly arrange seats, trying to entice guests? \
+Who would proudly arrange seats, trying to entice guests?
 
 Turn around the light to shine within, then just return. \
 The vast inconceivable source can't be faced or turned away from. \
 Meet the ancestral teachers, be familiar with their instruction, \
-bind grasses to build a hut, and don't give up. \
+bind grasses to build a hut, and don't give up.
+
 Let go of hundreds of years and relax completely. \
 Open your hands and walk, innocent. \
 Thousands of words, myriad interpretations, \
-are only to free you from obstructions. ○ \
+are only to free you from obstructions. ○
+
 If you want to know the undying person in the hut, ○ \
-don't separate from this skin bag here and now. ○ \
+don't separate from this skin bag here and now. ○
 
-== ○ ● Verse of the Faith-Mind ○
+#pagebreak()
 
-The#footnote[Attributed to Jiànzhī Sēngcàn (d. 606).] supreme way is not difficult \
+#sutra-title("Verse of the Faith-Mind", kanji: "信心銘", romaji: "Shinjinmei / Xinxin Ming", bells: "○ ●")
+
+#show par: it => block(below: 1.4em, it)
+
+The supreme way is not difficult \
 if only you do not choose. \
 When there is neither love nor hate, \
-all is open and clear. \
+all is open and clear.
 
 If there is the slightest distinction, \
 it is the distance between heaven and earth. \
 If you wish to see it revealed, \
-let go of preference and aversion. \
+let go of preference and aversion.
+
 The conflict between like and dislike \
 is a disease of the mind. \
 When this deep truth is not understood, \
-you try to still your thoughts in vain. \
+you try to still your thoughts in vain.
 
 The way is perfect, like vast space, \
 with nothing lacking and nothing in excess. \
 It is only because you accept and reject \
-that its Suchness is lost. \
+that its Suchness is lost.
+
 Neither chase after outer appearances \
 nor stay in the awareness of the void: \
 simply be serene in the One \
-and confusion will disappear by itself. \
+and confusion will disappear by itself.
+
 When you stop activity to return to stillness, \
 the stopping itself is just more activity. \
 Remaining in duality, \
-how will you ever know the One? \
+how will you ever know the One?
+
 Unless you penetrate the One, \
 you cannot function in either realm. \
 To reject existence is to lose existence; \
-to follow the void is to go against the void. \
+to follow the void is to go against the void.
 
 The more words and thoughts, \
 the less they fit the reality. \
 Cut off words, cut off thoughts, \
-and there is no place it does not penetrate. \
+and there is no place it does not penetrate.
+
 Return to the root and you gain the truth, \
 follow appearances and you lose the essence. \
 Even an instant of interior illumination \
 goes beyond the first void; \
 changes in this relative void \
-are due entirely to delusion. \
+are due entirely to delusion.
 
 No need to search for the truth: \
 just let go of all your opinions, \
 not abiding in dualistic views, \
-careful not to pursue them. \
+careful not to pursue them.
+
 For if there is a bit of right and wrong, \
 the mind is lost in confusion. \
-
 There are two because there is one, \
-but do not then cling to the one. \
+but do not then cling to the one.
+
 When the one mind does not arise, \
 the ten thousand things have no blame. \
 When there is no blame, there is no thing; \
-when it does not arise, there is no mind. \
+when it does not arise, there is no mind.
+
 Subject vanishes along with object; \
 object vanished along with subject. \
 Object is object because there is subject; \
-subject is subject because there is object. \
+subject is subject because there is object.
+
 If you want to know both levels— \
 they are originally one void. \
 The one void is the same in both \
-and they equally contain all things. \
+and they equally contain all things.
+
 When you do not distinguish between fine and coarse, \
 how can there be any bias? \
-
 The Great Way is in essence broad, \
-neither easy nor difficult. \
-TO hold narrow views causes apprehension; \
+neither easy nor difficult.
+
+To hold narrow views causes apprehension; \
 the more you hurry, the longer it takes. \
-IF you cling to such views, \
+If you cling to such views, \
 the right measure is lost, \
-and you are sure to go astray. \
+and you are sure to go astray.
+
 Let go of them and everything is natural; \
 in essence there is neither going nor staying. \
 Just act according to your nature, \
 and you will accord ○ with the Way, \
-walking it leisurely, ○ free from care. ○ \
+walking it leisurely, ○ free from care. ○
 
 Discursive thought turns away from the truth; \
 a dull, murky mind won't do either. \
 Feeling dislike, the spirit is troubled; \
-what use is there in being for or against things? \
+what use is there in being for or against things?
+
 If you want to take the one vehicle, \
 have no aversion to the world of the senses. \
 Indeed, not hating the sense ○ world \
-is identical ○ with true enlightenment. \
+is identical ○ with true enlightenment.
 
 The wise have no goals, \
 the ignorant shackle themselves: \
 for although among things there are no differences, \
-they vainly form attachments. \
+they vainly form attachments.
+
 Using the mind to seek the mind— \
 isn't that a great mistake? \
 Rest and unrest arise in delusion, \
-enlightenment knows neither like nor dislike. \
+enlightenment knows neither like nor dislike.
+
 All dualistic views come \
 from your own mistaken deductions. \
-
 They are dreams, fantasies, spots before your eyes; \
-why do you try to grasp them? \
+why do you try to grasp them?
+
 Gain and loss, right and wrong— \
 let go of them once and for all! \
-
 If the eyes never sleep, \
-dreams naturally cease; \
-if the mind does not distinguish, \
+dreams naturally cease;
+
+If the mind does not distinguish, \
 everything is One Suchness. \
 The essence of One Suchness is a mystery: \
-unmoving, absolute, karmic relations forgotten. \
+unmoving, absolute, karmic relations forgotten.
+
 When you see all things equally, \
 they return to their natural state: \
 causation disappears and comparisons cannot be made. \
+Stop moving and there is no movement;
 
-Stop moving and there is no movement; \
-put rest in motion and there is no rest. \
+Put rest in motion and there is no rest. \
 Since the two do not exist, \
 how can there be one? \
-In the absolute there are no rules; \
-the mind that accords with it becomes impartial, \
+In the absolute there are no rules;
+
+The mind that accords with it becomes impartial, \
 ceasing to plan and strive. \
 When doubts and suspicion are cleared away \
-true faith is easily attained. \
+true faith is easily attained.
 
 All things are transitory; \
 there is no need to remember them. \
 Void, clear, self-illuminating— \
-the mind does not make efforts. \
+the mind does not make efforts.
+
 This is the place of no-thinking, \
 difficult to fathom with intellect or feeling. \
-
 In the dharma world of Suchness, \
-there is no other, there is no self. \
+there is no other, there is no self.
+
 When you are asked to express it immediately, \
 you can only say, "Not two!" \
 If not-two, then everything is the same; \
-there is nothing that is not included. \
+there is nothing that is not included.
+
 The wise of the ten directions \
 have all entered this truth; \
 it is beyond expansion and contraction; \
-one moment of awareness is ten thousand years. \
+one moment of awareness is ten thousand years.
 
 Neither being nor non-being, \
 the entire universe is before your eyes. \
 The infinitely small is the same as the large; \
-boundaries have vanished. \
+boundaries have vanished.
+
 The infinitely large is the same as the small; \
 divisions cannot be seen. \
 Being is nothing but non-being; \
-non-being is nothing but being. \
+non-being is nothing but being.
+
 When it is not yet like this for you, \
 by no means remain in that state. \
 One is all, all is one. \
 If you realize it thus, \
-why worry about not finishing? \
+why worry about not finishing?
 
 The faith-mind is not-two; \
 not-two is the faith-mind. \
 Words fail to express ○ it. \
-It is not of the ○ past, future, or present. ○ \
+It is not of the ○ past, future, or present. ○
 
+#pagebreak()
 
-== ○ ● Discourse on Love ○
+#sutra-title("Discourse on Love", kanji: "慈經", romaji: "Metta Sutta", bells: "○ ●")
 
-Those#footnote[Metta Sutta (Suttanipāta 1), adapted by Thich Nhat Hanh. See #cite(<hanh1991plum>, form: "prose").] who want to attain peace should practice being upright, humble, and capable of using loving speech. They will know how to live simply and happily, with senses calmed, without being covetous and carried away by the emotions of the majority. Let them not do anything that will be disapproved of by the wise ones.
+Those who want to attain peace should practice being upright, humble, and capable of using loving speech. They will know how to live simply and happily, with senses calmed, without being covetous and carried away by the emotions of the majority. Let them not do anything that will be disapproved of by the wise ones.
 
-(And this is what they contemplate):
+#under-title-note[(And this is what they contemplate:)]
 
 "May everyone be happy and safe, and may their hearts be filled with joy. \
 
-"May all living beings live in security and in peace: being who are frail or strong, tall or short, big or small, visible or not visible, near or far away, already born or yet to be born. May all of them dwell in perfect tranquility. \
+"May all living beings live in security and in peace: beings who are frail or strong, tall or short, big or small, visible or not visible, near or far away, already born or yet to be born. May all of them dwell in perfect tranquility. \
 
 "Let no one do harm to anyone. Let no one put the life of anyone in danger. Let no one, out of anger or ill will, wish anyone any harm. \
 
-"Just as parents love and protect their children at the risk of their own lives, we should cultivate boundless love to offer to all living being in the entire cosmos. We should let our boundless love pervade the whole universe, above, below, and across. \
+"Just as parents love and protect their children at the risk of their own lives, we should cultivate boundless love to offer to all living beings in the entire cosmos. We should let our boundless love pervade the whole universe, above, below and across. \
 
 "Our love will know no obstacles, our heart will be absolutely free from hatred and enmity. Whether standing or walking, sitting or lying, as long as we are awake, we should maintain this mindfulness of love in our own hearts. This is the noblest way of living." \
 
-"Free from wrong views, greed, and sensual desires, living in beauty and ○ realizing perfect understanding, those who practice boundless ○ love will certainly transcend birth and death. ○ \
+"Free from wrong views, greed, and sensual desires, living in beauty and ○ realizing perfect understanding, those who practice boundless ○ love will certainly transcend birth and death. ○
 
-== ○ ● Discourse on Happiness ○
+#pagebreak()
 
-I#footnote[Mahāmangala Sutta (Suttanipāta 1), adapted by Thich Nhat Hanh. See #cite(<hanh1991plum>, form: "prose").] heard these words of the Buddha one time when the Lord was living in the vicinity of Shravasti at the Anathapindika monastery in the Jeta Park. Late at night a deva appeared whose light and beauty made the whole Jeta Grove shine radiantly. After paying respects to the Buddha, the deva asked him a question in the form of a verse:
+#sutra-title("Discourse on Happiness", kanji: "吉祥經", romaji: "Mahāmangala Sutta", bells: "○ ●")
+
+I heard these words of the Buddha one time when the Lord was living in the vicinity of Shravasti at the Anathapindika monastery in the Jeta Park. Late at night a deva appeared whose light and beauty made the whole Jeta Grove shine radiantly. After paying respects to the Buddha, the deva asked him a question in the form of a verse:
 
 "Many gods and men are eager to know \
 what are the greatest blessings \
 which can bring about a peaceful and happy life. \
 Please, Tathagata, will you teach us?"
 
-(This is the Buddha's answer):
+#under-title-note[(This is the Buddha's answer:)]
 
 "Not to be associated with the foolish ones, \
 to live in the company of wise people \
@@ -1295,94 +1503,114 @@ this is the greatest happiness." ○
 
 #pagebreak()
 
-= Diamond Sangha Jukai and Renewal Ceremony
+= Diamond Sangha Jukai \ and Renewal Ceremony
 
 #purification()
 
 #ti-sarana()
 
-== Assembly
+#pagebreak()
 
+== Transmission of the Precepts
+
+#speaker([Assembly])
+#pad(left: 1.5em)[
 The Great Precepts of all the Buddhas have been maintained and protected by all the Buddhas. Buddhas hand them down to Buddhas, and Ancestral Teachers hand them down to Ancestral Teachers. Acceptance and observance of the Precepts transcends past, present, and future, and form the perfect accord in realization between teacher and disciple, continuing through all ages.
 
 Our great teacher, Shakyamuni Buddha, imparted them to Mahakashyapa and Mahakashyapa transmitted them to Ananda. Already the Precepts have passed through many generations in direct succession, reaching down to the present head of this temple.
 
 Now, receiving the Great Precepts, I vow to requite my deep obligation to the Buddhas and Ancestral Teachers. I pledge to establish these Precepts as essential teachings for human beings and other beings so that all will inherit the wisdom of the Buddha.
+]
 
 == The Three Vows of Refuge
 
-_Roshi:_ I take refuge in the Buddha. \
-_Initiate:_ I take refuge in the Buddha... \
-_Roshi:_ I take refuge in the Dharma. \
-_Initiate:_ I take refuge in the Dharma... \
-_Roshi:_ I take refuge in the Sangha. \
-_Initiate:_ I take refuge in the Sangha... ○
+#speaker([Roshi])
+#pad(left: 1.5em)[I take refuge in the Buddha.]
+#speaker([Initiate])
+#pad(left: 1.5em)[I take refuge in the Buddha...]
+#speaker([Roshi])
+#pad(left: 1.5em)[I take refuge in the Dharma.]
+#speaker([Initiate])
+#pad(left: 1.5em)[I take refuge in the Dharma...]
+#speaker([Roshi])
+#pad(left: 1.5em)[I take refuge in the Sangha.]
+#speaker([Initiate])
+#pad(left: 1.5em)[I take refuge in the Sangha... ○]
 
 == The Three Pure Precepts
 
-_Roshi:_ I vow to maintain the Precepts. \
-_Initiate:_ I vow to maintain the precepts... \
-_Assembly:_ This is the cave whence all dharmas of all Buddhas arise. \
+#speaker([Roshi])
+#pad(left: 1.5em)[I vow to maintain the Precepts.]
+#speaker([Initiate])
+#pad(left: 1.5em)[I vow to maintain the precepts...]
+#speaker([Assembly])
+#pad(left: 1.5em)[This is the cave whence all dharmas of all Buddhas arise.]
 
-_Roshi:_ I vow to practice all good dharmas. \
-_Initiate:_ I vow to practice all good dharmas... \
-_Assembly:_ This is the path of fulfilled enlightenment. \
+#speaker([Roshi])
+#pad(left: 1.5em)[I vow to practice all good dharmas.]
+#speaker([Initiate])
+#pad(left: 1.5em)[I vow to practice all good dharmas...]
+#speaker([Assembly])
+#pad(left: 1.5em)[This is the path of fulfilled enlightenment.]
 
-_Roshi:_ I vow to save the many beings. \
-_Initiate:_ I vow to save the many beings... \
-_Assembly:_ Transcending profane and holy, I liberate myself and others. ○
+#speaker([Roshi])
+#pad(left: 1.5em)[I vow to save the many beings.]
+#speaker([Initiate])
+#pad(left: 1.5em)[I vow to save the many beings...]
+#speaker([Assembly])
+#pad(left: 1.5em)[Transcending profane and holy, I liberate myself and others. ○]
 
 == The Ten Grave Precepts
 
-_Roshi:_ I take up the Way of Not Killing. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the everlasting Dharma, not giving rise to the idea of killing is called the Precept of Not Killing. \
-_Initiate:_ I take up the Way of Not Killing... \
-_Assembly:_ The Buddha seed grows in accordance with not taking life. Transmit the life of Buddha's wisdom and do not kill. ○
+#speaker([Roshi]) I take up the Way of Not Killing. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the everlasting Dharma, not giving rise to the idea of killing is called the Precept of Not Killing. \
+#speaker([Initiate]) I take up the Way of Not Killing... \
+#speaker([Assembly]) The Buddha seed grows in accordance with not taking life. Transmit the life of Buddha's wisdom and do not kill. ○
 
-_Roshi:_ I take up the Way of Not Stealing. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the unattainable Dharma, not having thoughts of gaining is called the Precept of Not Stealing. \
-_Initiate:_ I take up the Way of Not Stealing... \
-_Assembly:_ The self and things of the world are just as they are. The gate of emancipation is open. ○
+#speaker([Roshi]) I take up the Way of Not Stealing. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the unattainable Dharma, not having thoughts of gaining is called the Precept of Not Stealing. \
+#speaker([Initiate]) I take up the Way of Not Stealing... \
+#speaker([Assembly]) The self and things of the world are just as they are. The gate of emancipation is open. ○
 
-_Roshi:_ I take up the Way of Not Misusing Sex. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the ungilded Dharma, not creating a veneer of attachment is called the Precept of Not Misusing Sex. \
-_Initiate:_ I take up the Way of Not Misusing Sex... \
-_Assembly:_ The Three Wheels are pure and clear. When you have nothing to desire, you follow the way of all Buddhas. ○
+#speaker([Roshi]) I take up the Way of Not Misusing Sex. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the ungilded Dharma, not creating a veneer of attachment is called the Precept of Not Misusing Sex. \
+#speaker([Initiate]) I take up the Way of Not Misusing Sex... \
+#speaker([Assembly]) The Three Wheels are pure and clear. When you have nothing to desire, you follow the way of all Buddhas. ○
 
-_Roshi:_ I take up the Way of Not Speaking Falsely. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the inexplicable Dharma, not preaching a single word is called the Precept of Not Speaking Falsely. \
-_Initiate:_ I take up the Way of Not Speaking Falsely... \
-_Assembly:_ The Dharma wheel turns from the beginning. There is neither surplus nor lack. The whole universe is moistened with nectar, and the truth is ready to harvest. ○
+#speaker([Roshi]) I take up the Way of Not Speaking Falsely. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the inexplicable Dharma, not preaching a single word is called the Precept of Not Speaking Falsely. \
+#speaker([Initiate]) I take up the Way of Not Speaking Falsely... \
+#speaker([Assembly]) The Dharma wheel turns from the beginning. There is neither surplus nor lack. The whole universe is moistened with nectar, and the truth is ready to harvest. ○
 
-_Roshi:_ I take up the Way of Not Giving or Taking Drugs. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the intrinsically pure Dharma, not giving rise to delusions is called the Precept of Not Giving or Taking Drugs. \
-_Initiate:_ I take up the Way of Not Giving or Taking Drugs... \
-_Assembly:_ Drugs are not brought in yet. Don't let them invade. That is the great light. ○
+#speaker([Roshi]) I take up the Way of Not Giving or Taking Drugs. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the intrinsically pure Dharma, not giving rise to delusions is called the Precept of Not Giving or Taking Drugs. \
+#speaker([Initiate]) I take up the Way of Not Giving or Taking Drugs... \
+#speaker([Assembly]) Drugs are not brought in yet. Don't let them invade. That is the great light. ○
 
-_Roshi:_ I take up the Way of Not Discussing Faults of Others. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the flawless Dharma, not expounding upon error is called the Precept of Not Discussing Faults of Others. \
-_Initiate:_ I take up the Way of Not Discussing Faults of Others... \
-_Assembly:_ In the Buddha Dharma, there is one path, one Dharma, one realization, one practice. Don't permit fault-finding. Don't permit haphazard talk. ○
+#speaker([Roshi]) I take up the Way of Not Discussing Faults of Others. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the flawless Dharma, not expounding upon error is called the Precept of Not Discussing Faults of Others. \
+#speaker([Initiate]) I take up the Way of Not Discussing Faults of Others... \
+#speaker([Assembly]) In the Buddha Dharma, there is one path, one Dharma, one realization, one practice. Don't permit fault-finding. Don't permit haphazard talk. ○
 
-_Roshi:_ I take up the Way of Not Praising Myself While Abusing Others. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the equitable Dharma, not dwelling upon I against You is called the Precept of Not Praising Myself While Abusing Others. \
-_Initiate:_ I take up the Way of Not Praising Myself While Abusing Others... \
-_Assembly:_ Buddhas and Ancestral Teachers realize the empty sky and the great earth. When they manifest the noble body, there is neither inside nor outside in emptiness. When they manifest the Dharma body, there is not even a bit of earth on the ground. ○
+#speaker([Roshi]) I take up the Way of Not Praising Myself While Abusing Others. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the equitable Dharma, not dwelling upon I against You is called the Precept of Not Praising Myself While Abusing Others. \
+#speaker([Initiate]) I take up the Way of Not Praising Myself While Abusing Others... \
+#speaker([Assembly]) Buddhas and Ancestral Teachers realize the empty sky and the great earth. When they manifest the noble body, there is neither inside nor outside in emptiness. When they manifest the Dharma body, there is not even a bit of earth on the ground. ○
 
-_Roshi:_ I take up the Way of Not Sparing the Dharma Assets. \
-_Assembly:_ Self-nature is subtle and mysterious. In the genuine, all-pervading Dharma, not being stingy about a single thing is called the Precept of Not Sparing the Dharma Assets. \
-_Initiate:_ I take up the Way of Not Sparing the Dharma Assets... \
-_Assembly:_ One phrase, one verse—that is the ten thousand things and one hundred grasses; one dharma, one realization—that is all Buddhas and Ancestral Teachers. Therefore from the beginning, there has been no stinginess at all. ○
+#speaker([Roshi]) I take up the Way of Not Sparing the Dharma Assets. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the genuine, all-pervading Dharma, not being stingy about a single thing is called the Precept of Not Sparing the Dharma Assets. \
+#speaker([Initiate]) I take up the Way of Not Sparing the Dharma Assets... \
+#speaker([Assembly]) One phrase, one verse—that is the ten thousand things and one hundred grasses; one dharma, one realization—that is all Buddhas and Ancestral Teachers. Therefore from the beginning, there has been no stinginess at all. ○
 
-_Roshi:_ I take up the Way of Not Indulging in Anger. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the selfless Dharma, not contriving reality for the self is called the Precept of Not Indulging in Anger. \
-_Initiate:_ I take up the Way of Not Indulging in Anger... \
-_Assembly:_ Not advancing, not retreating, not real, not empty. There is an ocean of bright clouds. There is an ocean of solemn clouds. ○
+#speaker([Roshi]) I take up the Way of Not Indulging in Anger. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the selfless Dharma, not contriving reality for the self is called the Precept of Not Indulging in Anger. \
+#speaker([Initiate]) I take up the Way of Not Indulging in Anger... \
+#speaker([Assembly]) Not advancing, not retreating, not real, not empty. There is an ocean of bright clouds. There is an ocean of solemn clouds. ○
 
-_Roshi:_ I take up the Way of Not Defaming the Three Treasures. \
-_Assembly:_ Self-nature is subtle and mysterious. In the realm of the One, not holding dualistic concepts of ordinary beings and sages is called the Precept of Not Defaming the Three Treasures. \
-_Initiate:_ I take up the Way of Not Defaming the Three Treasures... \
-_Assembly:_ The teisho of the actual body is the harbor and weir. This is the most important thing in the world. Its virtue finds its home in the ocean of essential nature. It is beyond explanation. We just accept it with respect and gratitude. ○
+#speaker([Roshi]) I take up the Way of Not Defaming the Three Treasures. \
+#speaker([Assembly]) Self-nature is subtle and mysterious. In the realm of the One, not holding dualistic concepts of ordinary beings and sages is called the Precept of Not Defaming the Three Treasures. \
+#speaker([Initiate]) I take up the Way of Not Defaming the Three Treasures... \
+#speaker([Assembly]) The teisho of the actual body is the harbor and weir. This is the most important thing in the world. Its virtue finds its home in the ocean of essential nature. It is beyond explanation. We just accept it with respect and gratitude. ○
 
 == Verse of the Rakusu
 
@@ -1393,93 +1621,110 @@ to liberate all beings.
 
 #pagebreak()
 
+= Text Sources
+
+The sutras, recitations, and readings in this collection come from traditional Mahayana sources and modern Zen translations:
+
+- *Hakuin Zenji: Song of Zazen*: #cite(<richmond1985moon>, form: "prose"). Adapted by Three Treasures Sangha, 2005.
+- *Zazen Universally Recommended (Fukan Zazengi)*: Version by Robert Aitken, based on #cite(<bielefeldt1988dogens>, form: "prose").
+- *Actualizing the Fundamental Point (Genjōkōan)*: #cite(<jaffe1996flowers>, form: "prose").
+- *The Four Virtues of a Bodhisattva (Bodaisatta Shishōbō)*: #cite(<richmond1985moon>, form: "prose"). Adapted by Three Treasures Sangha, 2005.
+- *Song of Enlightenment (Shōdōka)*: Attributed to Yǒngjiā Xuānjué (d. 713). Revisions by #cite(<aitken1991song>, form: "prose").
+- *The Coincidence of Opposites (Sandōkai)*: Attributed to Shītou Xīqiān (700–790). #cite(<foster1996roaring>, form: "prose").
+- *Song of the Grass-Roof Hermitage (Sōan-ka)*: Attributed to Shītou Xīqiān (700–790). #cite(<leighton1987cultivating>, form: "prose").
+- *Verse of the Faith-Mind (Xinxin Ming)*: Attributed to Jiànzhī Sēngcàn (d. 606).
+- *Discourse on Love (Metta Sutta)*: Metta Sutta (Suttanipāta 1), adapted by #cite(<hanh1991plum>, form: "prose").
+- *Discourse on Happiness (Mahāmangala Sutta)*: Mahāmangala Sutta (Suttanipāta 1), adapted by #cite(<hanh1991plum>, form: "prose").
+
+#pagebreak()
+
 #in-glossary.update(true)
 
 = Glossary and Notes
 
-/ Ancient Seven Buddhas #label("gloss-ancient-seven"): The lineage of Buddhas preceding the historical Śākyamuni, traditionally listed as Vipashyin, Shikhin, Vishvabhu, Krakucchanda, Kanakamuni, Kashyapa, and finally Śākyamuni. They represent the timeless nature of the Dharma, showing that the path to awakening is discovered and re-discovered throughout cosmic time.
+/ _Ancient Seven Buddhas_ #label("gloss-ancient-seven"): The lineage of Buddhas preceding the historical Śākyamuni, traditionally listed as Vipashyin, Shikhin, Vishvabhu, Krakucchanda, Kanakamuni, Kashyapa, and finally Śākyamuni. They represent the timeless nature of the Dharma, showing that the path to awakening is discovered and re-discovered throughout cosmic time.
 
-/ Bhadda Kapilani: A leading female disciple of the Buddha and the former wife of Mahakashyapa. She was renowned among the nuns for her ability to remember her past lives and was a prominent teacher in her own right, often praised for her deep wisdom and commitment to the practice.
+/ _Bhadda Kapilani_: A leading female disciple of the Buddha and the former wife of Mahakashyapa. She was renowned among the nuns for her ability to remember her past lives and was a prominent teacher in her own right, often praised for her deep wisdom and commitment to the practice.
 
-/ Bodhidharma: The first Zen patriarch in China, credited with bringing the dhyana (Zen) tradition from India to China. He is famous for his nine years of "wall-gazing" at Shaolin Monastery and his teaching of "pointing directly to the human mind, seeing one’s nature and becoming Buddha."
+/ _Bodhidharma_ [菩提達磨]: The first Zen patriarch in China, credited with bringing the dhyana (Zen) tradition from India to China. He is famous for his nine years of "wall-gazing" at Shaolin Monastery and his teaching of "pointing directly to the human mind, seeing one’s nature and becoming Buddha."
 
-/ Bodhisattva #label("gloss-bodhisattva"): (Sanskrit: "Awakening Being"). A person who has attained enlightenment but vows to remain in the cycle of birth and death to help all beings achieve liberation.
+/ _Bodhisattva_ #label("gloss-bodhisattva"): (Sanskrit: "Awakening Being"). A person who has attained enlightenment but vows to remain in the cycle of birth and death to help all beings achieve liberation.
 
-/ Caoqi #label("gloss-caoqi"): (Ts'ao Ch'i). The place in southern China where Huineng, the Sixth Patriarch, lived and taught. It became a major center for the Chan tradition.
+/ _Caoqi_ #label("gloss-caoqi") [曹溪]: (Ts'ao Ch'i). The place in southern China where Huineng, the Sixth Patriarch, lived and taught. It became a major center for the Chan tradition.
 
-/ Dahui Zonggao: A prominent master of the Linji school who popularized the use of koans (kanhua Zen) as a direct means to bypass the intellectual mind and achieve sudden enlightenment. He was a prolific teacher with many lay and female disciples, including Miao Dao and Miao Zong.
+/ _Dahui Zonggao_ [大慧宗杲]: A prominent master of the Linji school who popularized the use of koans (kanhua Zen) as a direct means to bypass the intellectual mind and achieve sudden enlightenment. He was a prolific teacher with many lay and female disciples, including Miao Dao and Miao Zong.
 
-/ Daiun Sogaku (Harada): A modern Zen master who integrated the Sōtō and Rinzai traditions, emphasizing both zazen and koan practice. He founded the Harada-Yasutani line, which had a major influence on the development of Zen in the West.
+/ _Daiun Sogaku (Harada)_ [原田大雲祖岳]: A modern Zen master who integrated the Sōtō and Rinzai traditions, emphasizing both zazen and koan practice. He founded the Harada-Yasutani line, which had a major influence on the development of Zen in the West.
 
-/ Dawn-Cloud Aitken (Anne Aitken): A co-founder of the Diamond Sangha along with her husband Robert Aitken. She was a quiet but profound presence in the development of Western Zen, providing the organizational and spiritual foundation that allowed the Sangha to flourish.
+/ _Dawn-Cloud Aitken (Anne Aitken)_: A co-founder of the Diamond Sangha along with her husband Robert Aitken. She was a quiet but profound presence in the development of Western Zen, providing the organizational and spiritual foundation that allowed the Sangha to flourish.
 
-/ Dharma #label("gloss-dharma"): (Sanskrit: "Law" or "Truth"). The teachings of the Buddha and the underlying reality of the universe. It also refers to any phenomenon or "thing."
+/ _Dharma_ #label("gloss-dharma"): (Sanskrit: "Law" or "Truth"). The teachings of the Buddha and the underlying reality of the universe. It also refers to any phenomenon or "thing."
 
-/ Diamond Sangha #label("gloss-diamond-sangha"): A lay Zen organization founded by Robert and Anne Aitken in Hawaii in 1959. It is part of the Sanbo Kyodan lineage and has many affiliate groups worldwide.
+/ _Diamond Sangha_ #label("gloss-diamond-sangha"): A lay Zen organization founded by Robert and Anne Aitken in Hawaii in 1959. It is part of the Sanbo Kyodan lineage and has many affiliate groups worldwide.
 
-/ Dōgen Kigen: The founder of the Sōtō school in Japan. He emphasized the practice of "shikan-taza" (just sitting) and the identity of practice and enlightenment. His masterwork, the /Shobogenzo/, is one of the most profound philosophical texts in the Zen tradition.
+/ _Dōgen Kigen_ [道元希玄]: The founder of the Sōtō school in Japan. He emphasized the practice of "shikan-taza" (just sitting) and the identity of practice and enlightenment. His masterwork, the /Shobogenzo/, is one of the most profound philosophical texts in the Zen tradition.
 
-/ Dongshan Liangjie: The founder of the Caodong (Sōtō) school in China. A disciple of Yunyan Tansheng, he is famous for formulating the "Five Ranks" (Go-i), which describe the stages of realization and the relationship between the absolute (sho) and the relative (hen).
+/ _Dongshan Liangjie_ [洞山良價]: The founder of the Caodong (Sōtō) school in China. A disciple of Yunyan Tansheng, he is famous for formulating the "Five Ranks" (Go-i), which describe the stages of realization and the relationship between the absolute (sho) and the relative (hen).
 
-/ Fei-ni #label("gloss-feini"): (Chinese: 肥膩). A rare or mythical Himalayan grass described in traditional Buddhist commentary as nourishing cows to produce pure, delicious milk, symbolizing the rich nourishment of the Dharma.
+/ _Fei-ni_ #label("gloss-feini"): (Chinese: 肥膩). A rare or mythical Himalayan grass described in traditional Buddhist commentary as nourishing cows to produce pure, delicious milk, symbolizing the rich nourishment of the Dharma.
 
-/ Gassho #label("gloss-gassho"): (Japanese: "Joined Palms"). A gesture of respect and mindfulness, performed by placing the palms together at chest level.
+/ _Gassho_ #label("gloss-gassho"): (Japanese: "Joined Palms" [合掌]). A gesture of respect and mindfulness, performed by placing the palms together at chest level.
 
-/ Hakuin Ekaku #label("gloss-hakuin"): (1686–1769). One of the most important figures in Japanese Zen, he revitalized the Rinzai school and is famous for his teachings on the "Great Doubt" and for the koan "What is the sound of one hand clapping?"
+/ _Hakuin Ekaku_ #label("gloss-hakuin") [白隠慧鶴]: (1686–1769). One of the most important figures in Japanese Zen, he revitalized the Rinzai school and is famous for his teachings on the "Great Doubt" and for the koan "What is the sound of one hand clapping?"
 
-/ Hakuun Ryoko (Yasutani): Founder of the Sanbo Kyodan (Three Treasures Association), he worked to make Zen accessible to laypeople and Westerners. His teachings, preserved in /The Three Pillars of Zen/, were fundamental to the spread of Zen beyond Japan.
+/ _Hakuun Ryoko (Yasutani)_ [安谷白雲量広]: Founder of the Sanbo Kyodan (Three Treasures Association), he worked to make Zen accessible to laypeople and Westerners. His teachings, preserved in /The Three Pillars of Zen/, were fundamental to the spread of Zen beyond Japan.
 
-/ Huineng #label("gloss-huineng"): (638–713). The Sixth Patriarch of Chan (Zen) in China. He is a central figure in Zen history, and his teachings are preserved in the /Platform Sutra/. He emphasized the sudden realization of our own Buddha-nature.
+/ _Huineng_ #label("gloss-huineng") [惠能]: (638–713). The Sixth Patriarch of Chan (Zen) in China. He is a central figure in Zen history, and his teachings are preserved in the /Platform Sutra/. He emphasized the sudden realization of our own Buddha-nature.
 
-/ Inkin #label("gloss-inkin"): (Japanese). A small hand-held bell mounted on a handle and struck with a metal striker, used by the Ino to signal the beginning and end of sections or specific actions.
+/ _Inkin_ #label("gloss-inkin"): (Japanese: [引磬]). A small hand-held bell mounted on a handle and struck with a metal striker, used by the Ino to signal the beginning and end of sections or specific actions.
 
-/ Jishou Daojen: A female Zen practitioner and Dharma successor of Yuanwu Keqin at Zhaojue Monastery. She achieved awakening through the phrase "It is not mind, it is not Buddha, it is not a thing," and is formally recognized as a realized teacher in the /Jiatai Pudeng Lu/.
+/ _Jishou Daojen_ [寂照道人]: A female Zen practitioner and Dharma successor of Yuanwu Keqin at Zhaojue Monastery. She achieved awakening through the phrase "It is not mind, it is not Buddha, it is not a thing," and is formally recognized as a realized teacher in the /Jiatai Pudeng Lu/.
 
-/ Keizan Jokin: The "Second Founder" of the Sōtō school in Japan. A successor to Dōgen, he expanded the school's influence by making it more accessible to the common people and founded Soji-ji, one of the two head temples of the Sōtō school.
+/ _Keizan Jokin_ [瑩山紹瑾]: The "Second Founder" of the Sōtō school in Japan. A successor to Dōgen, he expanded the school's influence by making it more accessible to the common people and founded Soji-ji, one of the two head temples of the Sōtō school.
 
-/ Koun Zenshin (Yamada): Successor to Yasutani Roshi and leader of the Sanbo Kyodan. He was a pivotal figure in the transmission of Zen to the West, serving as a teacher to many influential Western Zen practitioners, including Robert Aitken.
+/ _Koun Zenshin (Yamada)_ [山田耕雲禅心]: Successor to Yasutani Roshi and leader of the Sanbo Kyodan. He was a pivotal figure in the transmission of Zen to the West, serving as a teacher to many influential Western Zen practitioners, including Robert Aitken.
 
-/ Linji Yixuan #label("gloss-linji"): (d. 866). The founder of the Linji (Rinzai) school of Zen. He was known for his direct and often shocking teaching methods, such as shouting and hitting, to help students break through their conceptual thinking.
+/ _Linji Yixuan_ #label("gloss-linji") [臨濟義玄]: (d. 866). The founder of the Linji (Rinzai) school of Zen. He was known for his direct and often shocking teaching methods, such as shouting and hitting, to help students break through their conceptual thinking.
 
-/ Liu Tiemo (Iron Grindstone Liu): A formidable female Zen master and disciple of Guishan Lingyou. She earned her nickname "Iron Grindstone" for her sharp wit and ability to crush the ego of any monk who challenged her in Dharma combat.
+/ _Liu Tiemo (Iron Grindstone Liu)_ [劉鐵磨]: A formidable female Zen master and disciple of Guishan Lingyou. She earned her nickname "Iron Grindstone" for her sharp wit and ability to crush the ego of any monk who challenged her in Dharma combat.
 
-/ Mahaprajapati Gautami: The Buddha’s aunt and foster mother who became the first Buddhist nun (bhikkhuni). She led the establishment of the female monastic Sangha, demonstrating that women could achieve the highest stages of realization.
+/ _Mahaprajapati Gautami_ [大愛道]: The Buddha’s aunt and foster mother who became the first Buddhist nun (bhikkhuni). She led the establishment of the female monastic Sangha, demonstrating that women could achieve the highest stages of realization.
 
-/ Mazu Daoji: A major figure in the "Golden Age" of Chinese Chan and a Dharma heir of Nanyue Huairang. Famous for his teaching that "This Mind is Buddha" and his robust methods of bringing students to awakening.
+/ _Mazu Daoji_ [馬祖道一]: A major figure in the "Golden Age" of Chinese Chan and a Dharma heir of Nanyue Huairang. Famous for his teaching that "This Mind is Buddha" and his robust methods of bringing students to awakening.
 
-/ Miao Dao: A highly respected female Zen master and disciple of Dahui Zonggao. She received formal Dharma transmission from Dahui and led her own community, teaching both men and women.
+/ _Miao Dao_ [妙道]: A highly respected female Zen master and disciple of Dahui Zonggao. She received formal Dharma transmission from Dahui and led her own community, teaching both men and women.
 
-/ Miao Zong: A female Zen master and disciple of Dahui Zonggao. Formerly a laywoman of high status, she became a nun and achieved deep realization.
+/ _Miao Zong_ [妙總]: A female Zen master and disciple of Dahui Zonggao. Formerly a laywoman of high status, she became a nun and achieved deep realization.
 
-/ Mokugyo #label("gloss-mokugyo"): (Japanese: "Wooden Fish"). A fish-shaped wooden percussion instrument used in Zen to keep time during chanting.
+/ _Mokugyo_ #label("gloss-mokugyo"): (Japanese: "Wooden Fish" [木魚]). A fish-shaped wooden percussion instrument used in Zen to keep time during chanting.
 
-/ Nirvāṇa #label("gloss-nirvana"): (Sanskrit: "Extinguishing"). The cessation of suffering and the cycle of birth and death (samsara). In Zen, Nirvāṇa is realized right here and now.
+/ _Nirvāṇa_ #label("gloss-nirvana"): (Sanskrit: "Extinguishing"). The cessation of suffering and the cycle of birth and death (samsara). In Zen, Nirvāṇa is realized right here and now.
 
-/ Pang Lingzhao: The daughter of Layman Pang and a highly realized practitioner. She famously engaged in sharp Zen encounters and passed away in meditation just before her father.
+/ _Pang Lingzhao_ [龐靈照]: The daughter of Layman Pang and a highly realized practitioner. She famously engaged in sharp Zen encounters and passed away in meditation just before her father.
 
-/ Pang Yun Jushi (Layman Pang): A celebrated lay Zen master who achieved realization while studying under both Mazu Daoji and Shitou Xiqian. Famous for living a simple, enlightened life with his family.
+/ _Pang Yun Jushi (Layman Pang)_ [龐蘊居士]: A celebrated lay Zen master who achieved realization while studying under both Mazu Daoji and Shitou Xiqian. Famous for living a simple, enlightened life with his family.
 
-/ Patacara: An early female disciple of the Buddha who achieved Arhatship and became a renowned teacher and expert in monastic discipline (Vinaya).
+/ _Patacara_: An early female disciple of the Buddha who achieved Arhatship and became a renowned teacher and expert in monastic discipline (Vinaya).
 
-/ Prajñā pāramitā #label("gloss-prajna"): (Sanskrit: "Perfection of Wisdom"). The central concept of Mahayana Buddhism, referring to the wisdom that realizes the emptiness of all phenomena.
+/ _Prajñā pāramitā_ #label("gloss-prajna"): (Sanskrit: "Perfection of Wisdom"). The central concept of Mahayana Buddhism, referring to the wisdom that realizes the emptiness of all phenomena.
 
-/ Pratyekabuddha: (Sanskrit: "Solitary Buddha"). A practitioner who achieves enlightenment independently in an age without a Buddha, through contemplation of dependent origination.
+/ _Pratyekabuddha_: (Sanskrit: "Solitary Buddha"). A practitioner who achieves enlightenment independently in an age without a Buddha, through contemplation of dependent origination.
 
-/ Saṅgha #label("gloss-sangha"): (Sanskrit: "Community"). The community of Buddhist practitioners, including monastics and laypeople.
+/ _Saṅgha_ #label("gloss-sangha"): (Sanskrit: "Community"). The community of Buddhist practitioners, including monastics and laypeople.
 
-/ Śākyamuni Buddha: The historical founder of Buddhism. Born as Siddhartha Gautama in the Shakya clan, he attained supreme enlightenment under the Bodhi tree.
+/ _Śākyamuni Buddha_ [釋迦牟尼佛]: The historical founder of Buddhism. Born as Siddhartha Gautama in the Shakya clan, he attained supreme enlightenment under the Bodhi tree.
 
-/ Shitou Xiqian: A key figure in early Chinese Chan. Author of the /Sandokai/ and the /Song of the Grass-Roof Hermitage/, central to the Sōtō Zen liturgy.
+/ _Shitou Xiqian_ [石頭希遷]: A key figure in early Chinese Chan. Author of the /Sandokai/ and the /Song of the Grass-Roof Hermitage/, central to the Sōtō Zen liturgy.
 
-/ Shravaka: (Sanskrit: "Voice-hearer"). A practitioner who hears the Buddha's teaching and strives for liberation, traditionally referring to early disciples and monastics.
+/ _Shravaka_: (Sanskrit: "Voice-hearer"). A practitioner who hears the Buddha's teaching and strives for liberation, traditionally referring to early disciples and monastics.
 
-/ Single-Mind Aitken (Robert Aitken): A co-founder of the Diamond Sangha and a pioneering figure in Western Zen. Known for his integration of social justice and Buddhist practice.
+/ _Single-Mind Aitken (Robert Aitken)_: A co-founder of the Diamond Sangha and a pioneering figure in Western Zen. Known for his integration of social justice and Buddhist practice.
 
-/ Skandhas #label("gloss-skandhas"): (Sanskrit: "Aggregates"). The five components that make up a person: form, sensation, perception, mental formation, and consciousness.
+/ _Skandhas_ #label("gloss-skandhas"): (Sanskrit: "Aggregates"). The five components that make up a person: form, sensation, perception, mental formation, and consciousness.
 
-/ Three Treasures Sangha #label("gloss-tts"): A lay Zen group in Seattle, Washington, affiliated with the Diamond Sangha.
+/ _Three Treasures Sangha_ #label("gloss-tts"): A lay Zen group in Seattle, Washington, affiliated with the Diamond Sangha.
 
-/ Vimalakirti: A legendary lay contemporary of the Buddha who exemplified the ideal of the "lay bodhisattva" in the Vimalakirti Sutra.
+/ _Vimalakirti_ [維摩詰]: A legendary lay contemporary of the Buddha who exemplified the ideal of the "lay bodhisattva" in the Vimalakirti Sutra.
 
 #in-glossary.update(false)
 

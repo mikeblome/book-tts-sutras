@@ -48,19 +48,37 @@
 
   // Typography settings
   #set par(
-    leading: 0.65em,
-    spacing: 1.1em,
+    leading: 0.55em,
     justify: false, // Poetry shouldn't be justified
   )
+  #show par: it => block(below: 1.2em, it)
 
   // Outline / TOC styling
+  #show outline.entry: it => {
+    // Strip all percussion symbols and leading spaces from TOC entries
+    show regex("([△▲○●×])([¹²³]*)"): ""
+    show regex("^\s+"): ""
+    it
+  }
+
   #show outline.entry.where(level: 1): it => {
-    v(0.6em, weak: true)
-    strong(it)
+    v(1.0em, weak: true)
+    strong(text(size: 1.05em, it))
+  }
+  #show outline.entry.where(level: 2): it => {
+    v(0.35em, weak: true)
+    it
   }
 
   // Bibliography hanging indent
   #show bibliography: set par(hanging-indent: 2em, justify: true)
+
+  // Description list / glossary term styling (ensure CJK in terms uses regular weight)
+  #show terms.item: it => [
+    #block(below: 0.8em)[
+      #text(weight: "regular")[#it.term]: #it.description
+    ]
+  ]
 
   // Footnote entry styling
   #show footnote.entry: set par(spacing: 0.8em, leading: 0.55em)
@@ -69,30 +87,28 @@
   #show heading.where(level: 1): it => {
     pagebreak(to: "odd", weak: true)
     v(1.5em)
-    set align(center)
-    set text(size: 1.5em, weight: "regular", font: "Libertinus Serif Display")
-    it.body
+    align(center, text(size: 1.6em, weight: "bold", font: "Libertinus Serif Display", it.body))
     v(1.2em)
   }
 
   #show heading.where(level: 2): it => {
-    set align(center)
-    set text(size: 1.2em, weight: "bold")
-    block(above: 1.5em, below: 0.8em, it.body)
+    v(1.6em, weak: true)
+    block(width: 100%, align(center, text(size: 1.35em, weight: "bold", font: "Libertinus Serif Display", it.body)))
+    v(1.4em, weak: true)
   }
 
   #show heading.where(level: 3): it => {
-    set align(center)
-    set text(size: 1.05em, weight: "regular", style: "italic")
-    block(above: 1em, below: 0.6em, it.body)
+    v(1.0em, weak: true)
+    block(width: 100%, align(center, text(size: 1.1em, weight: "regular", style: "italic", it.body)))
+    v(0.6em, weak: true)
   }
 
-  // Don't show ino percussion annotation if not desired
-  #show regex("([△▲○●×])([¹²³]*)"): it => {
+  // Don't show ino percussion annotation if not desired; normalize spacing when hidden
+  #show regex("([ \t]*)([△▲○●×])([¹²³]*)([ \t]*)"): it => {
     if show-ino { 
       text(fill: rgb("#b22222"), it) // Firebrick red
     } else { 
-      "" 
+      " " 
     }
   }
 
