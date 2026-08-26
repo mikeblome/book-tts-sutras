@@ -2,6 +2,7 @@
 // Functions we will import for use in the sutra book
 
 #let in-glossary = state("in-glossary", false)
+#let in-heading = state("in-heading", false)
 
 // A helper macro to wrap any content in a classed <span> for JS to find.
 #let classed-span(classname, content) = {
@@ -27,11 +28,11 @@
   classed-span("lang-en", content)
 }
 
-// Helper for glossary links
+// Helper for glossary links (disabled within glossary and headings)
 #let gloss-link(it, target) = {
   if sys.inputs.at("target", default: "pdf") == "html" {
     context {
-      if in-glossary.get() {
+      if in-glossary.get() or in-heading.get() {
         it
       } else {
         classed-span("glossary-link", link(target, it))
@@ -47,20 +48,44 @@
 #let subtitle(body) = align(center, text(style: "italic", size: 0.95em, body))
 #let in-gassho() = under-title-note[in gassho]
 
+// Helper for indented blocks that preserves content in HTML export
+#let indented-block(body) = {
+  if sys.inputs.at("target", default: "pdf") == "html" {
+    classed-block("indented-block", body)
+  } else {
+    pad(left: 1.5em, body)
+  }
+}
+
 // Standardized trilingual sutra title helper (English, Kanji, Romaji)
 #let sutra-title(eng, kanji: none, romaji: none, bells: "") = {
   let show-ino-input = sys.inputs.at("show-ino-notation", default: "false") == "true"
   let is-html = sys.inputs.at("target", default: "pdf") == "html"
-  let title-text = if (show-ino-input or is-html) and bells != "" { bells + " " + eng } else { eng }
-  heading(level: 2)[#title-text]
-  if kanji != none or romaji != none {
-    v(-0.2em)
-    align(center)[
-      #if kanji != none [#text(size: 1.05em, font: ("Noto Serif CJK JP", "Noto Serif CJK SC"))[#kanji]]
-      #if kanji != none and romaji != none [ #text(size: 0.8em, fill: luma(120))[•] ]
-      #if romaji != none [#text(size: 0.95em, style: "italic", font: ("EB Garamond 12", "Libertinus Serif"))[#romaji]]
-    ]
-    v(0.4em)
+  
+  if is-html {
+    in-heading.update(true)
+    heading(level: 2)[#eng]
+    in-heading.update(false)
+
+    if kanji != none or romaji != none {
+      classed-block("sutra-subtitle", [
+        #if kanji != none [#classed-span("lang-zh", kanji)]
+        #if kanji != none and romaji != none [#classed-span("subtitle-bullet", [ • ])]
+        #if romaji != none [#classed-span("lang-ro", romaji)]
+      ])
+    }
+  } else {
+    let title-text = if show-ino-input and bells != "" { bells + " " + eng } else { eng }
+    heading(level: 2)[#title-text]
+    if kanji != none or romaji != none {
+      v(-0.2em)
+      align(center)[
+        #if kanji != none [#text(size: 1.05em, font: ("Noto Serif CJK JP", "Noto Serif CJK SC"))[#kanji]]
+        #if kanji != none and romaji != none [ #text(size: 0.8em, fill: luma(120))[•] ]
+        #if romaji != none [#text(size: 0.95em, style: "italic", font: ("EB Garamond 12", "Libertinus Serif"))[#romaji]]
+      ]
+      v(0.4em)
+    }
   }
 }
 
@@ -91,6 +116,70 @@
         text(font: ("EB Garamond 12", "Libertinus Serif"), size: ro_size, weight: "semibold", top),
         text(font: ("Noto Serif CJK JP", "Noto Serif CJK SC"), weight: "regular", size: zh_size, word)
       )
+    )
+  }
+}
+
+// Helper for large ruby annotations (e.g. Four Infinite Vows)
+#let above_large(word, top) = {
+  let zh_size = 2.2em
+  let ro_size = 1.4em
+
+  if sys.inputs.at("target", default: "pdf") == "html" {
+    html.elem("ruby", [
+      #classed-span("lang-zh", text(size: zh_size, word))
+      #html.elem("rt", classed-span("lang-ro", text(size: ro_size, weight: "semibold", top)))
+    ])
+  } else {
+    box(
+      inset: (x: 0.28em, y: 0pt),
+      grid(
+        columns: 1,
+        gutter: 8pt,
+        align: center + horizon,
+        text(font: ("EB Garamond 12", "Libertinus Serif"), size: ro_size, weight: "semibold", top),
+        text(font: ("Noto Serif CJK JP", "Noto Serif CJK SC"), weight: "regular", size: zh_size, word)
+      )
+    )
+  }
+}
+
+#let zh_large(left, right) = {
+  let left_array = left.text.split("|")
+  let right_array = right.text.split("|")
+
+  if left_array.len() != right_array.len() {
+    panic("Ruby text has imbalanced sides.")
+  }
+
+  let ruby_content = {
+    let sum_body = () 
+    for i in range(left_array.len()) {
+      sum_body += (
+        above_large(
+          text(right_array.at(i)),
+          text(size: 1em, left_array.at(i))
+        ),
+      )
+    }
+    sum_body.join()
+  }
+
+  text(lang: "zh", ruby_content)
+}
+
+// Reusable helper macro for lineage names grid
+#let lineage-names-grid(items) = {
+  if sys.inputs.at("target", default: "pdf") == "html" {
+    classed-block("lineage-grid", items.join(" "))
+  } else {
+    set text(size: 8.8pt)
+    set par(leading: 0.38em)
+    grid(
+      columns: (auto, 1fr),
+      column-gutter: 1.2em,
+      row-gutter: 0.22em,
+      ..items
     )
   }
 }

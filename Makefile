@@ -25,6 +25,8 @@ html: $(HTML_OUT)
 
 $(HTML_OUT): $(DEPS) | $(PUBLIC)
 	typst compile --root . $(SRC) $(HTML_OUT) --features html --input show-ino-notation=false --input target=html $(FONT_PATHS)
+	sed -i 's|</head>|<link rel="stylesheet" href="style.css"><script src="interactivity.js" defer></script></head>|' $(HTML_OUT)
+	cp $(HTML_OUT) $(PUBLIC)/index.html
 
 ino-pdf: $(INO_PDF_OUT)
 

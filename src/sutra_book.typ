@@ -58,64 +58,59 @@ sangham saranam gacchami. ○
 #sutra-title("Sesshin Dedication", kanji: "回向文", romaji: "Eko Mon")
 #in-gassho()
 
-#speaker([Leader])
-#pad(left: 1.5em)[
-#set text(size: 10pt)
-#set par(leading: 0.5em)
+#speaker([Ino])
+#indented-block[
+#set text(size: 9.8pt)
+#set par(leading: 0.45em)
 Buddha nature pervades the whole universe, existing right here now. With our reciting of "The Great Prajñā pāramitā Heart Sutra" (Maka Hannya Haramita Shingyō) and the "Sho Sai Myo Kichijo Dharani," let us unite with:
 ]
 
-#v(0.4em)
+#v(0.3em)
 
-#speaker([Assembly])
-#pad(left: 1.5em)[
-#set text(size: 9.2pt)
-#set par(leading: 0.4em)
-#grid(
-  columns: (auto, 1fr),
-  column-gutter: 1.2em,
-  row-gutter: 0.32em,
-  [● The Ancient Seven Buddhas, Dai Bussō], [],
-  [● Śākyamuni Buddha, Dai Bussō], [],
-  [● Mahaprajapati Gautami, Dai Bussō], text(style: "italic", size: 0.88em)[maha prajāpati go'tami],
-  [● Vimalakirti, Dai Bussō], text(style: "italic", size: 0.88em)[vi'mala kīrti],
-  [● Patacara, Dai Bussō], text(style: "italic", size: 0.88em)[p'ta chāra],
-  [● Bhadda Kapilani, Dai Bussō], text(style: "italic", size: 0.88em)[b'da kapilāni],
-  [● Bodhidharma, Dai Bussō], [],
-  [● Shitou Xiqian, Dai Bussō], text(style: "italic", size: 0.88em)[shure'-toe she-chwen],
-  [● Mazu Daoji, Dai Bussō], text(style: "italic", size: 0.88em)[ma'-zoo dao'-ee],
-  [● Dongshan Liangjie, Dai Bussō], text(style: "italic", size: 0.88em)[dong-shan liang-jay],
-  [● Pang Yun Jushi, Dai Bussō], text(style: "italic", size: 0.88em)[pong yun jew-sure],
-  [● Pang Lingzhao, Dai Bussō], text(style: "italic", size: 0.88em)[pong ling-jao],
-  [● Liu Tiemo, Dai Bussō], text(style: "italic", size: 0.88em)[leo tyeh'-mo],
-  [● Jishou Daojen, Dai Bussō], text(style: "italic", size: 0.88em)[jee-show dow-ren],
-  [● Dahui Zonggao, Dai Bussō], text(style: "italic", size: 0.88em)[da-whey zong-gao],
-  [● Miao Dao, Dai Bussō], text(style: "italic", size: 0.88em)[meow dow],
-  [● Miao Zong, Dai Bussō], text(style: "italic", size: 0.88em)[meow zong],
-  [● Dōgen Kigen, Dai Bussō], [],
-  [● Keizan Jokin, Dai Bussō], [],
-  [● Daiun Sogaku, Dai Bussō], [],
-  [● Hakuun Ryoko, Dai Bussō], [],
-  [● Koun Zenshin, Dai Bussō], [],
-  [● Single-Mind Aitken, Dai Bussō], [],
-  [● Dawn-Cloud Aitken, Dai Bussō], []
-)
+#speaker([All])
+#indented-block[
+#lineage-names-grid((
+  [● #gloss-link([The Ancient Seven Buddhas], <gloss-ancient-seven>), Dai Bussō], [],
+  [● #gloss-link([Śākyamuni Buddha], <gloss-sakyamuni>), Dai Bussō], [],
+  [● #gloss-link([Mahaprajapati Gautami], <gloss-mahaprajapati>), Dai Bussō], text(style: "italic", size: 0.88em)[maha prajāpati go'tami],
+  [● #gloss-link([Vimalakirti], <gloss-vimalakirti>), Dai Bussō], text(style: "italic", size: 0.88em)[vi'mala kīrti],
+  [● #gloss-link([Patacara], <gloss-patacara>), Dai Bussō], text(style: "italic", size: 0.88em)[p'ta chāra],
+  [● #gloss-link([Bhadda Kapilani], <gloss-bhadda-kapilani>), Dai Bussō], text(style: "italic", size: 0.88em)[b'da kapilāni],
+  [● #gloss-link([Bodhidharma], <gloss-bodhidharma>), Dai Bussō], [],
+  [● #gloss-link([Shitou Xiqian], <gloss-shitou-xiqian>), Dai Bussō], text(style: "italic", size: 0.88em)[shure'-toe she-chwen],
+  [● #gloss-link([Mazu Daoji], <gloss-mazu-daoji>), Dai Bussō], text(style: "italic", size: 0.88em)[ma'-zoo dao'-ee],
+  [● #gloss-link([Dongshan Liangjie], <gloss-dongshan-liangjie>), Dai Bussō], text(style: "italic", size: 0.88em)[dong-shan liang-jay],
+  [● #gloss-link([Pang Yun Jushi], <gloss-pang-yun>), Dai Bussō], text(style: "italic", size: 0.88em)[pong yun jew-sure],
+  [● #gloss-link([Pang Lingzhao], <gloss-pang-lingzhao>), Dai Bussō], text(style: "italic", size: 0.88em)[pong ling-jao],
+  [● #gloss-link([Liu Tiemo], <gloss-liu-tiemo>), Dai Bussō], text(style: "italic", size: 0.88em)[leo tyeh'-mo],
+  [● #gloss-link([Jishou Daojen], <gloss-jishou-daojen>), Dai Bussō], text(style: "italic", size: 0.88em)[jee-show dow-ren],
+  [● #gloss-link([Dahui Zonggao], <gloss-dahui-zonggao>), Dai Bussō], text(style: "italic", size: 0.88em)[da-whey zong-gao],
+  [● #gloss-link([Miao Dao], <gloss-miao-dao>), Dai Bussō], text(style: "italic", size: 0.88em)[meow dow],
+  [● #gloss-link([Miao Zong], <gloss-miao-zong>), Dai Bussō], text(style: "italic", size: 0.88em)[meow zong],
+  [● #gloss-link([Dōgen Kigen], <gloss-dogen-kigen>), Dai Bussō], [],
+  [● #gloss-link([Keizan Jokin], <gloss-keizan-jokin>), Dai Bussō], [],
+  [● #gloss-link([Daiun Sogaku], <gloss-daiun-sogaku>), Dai Bussō], [],
+  [● #gloss-link([Hakuun Ryoko], <gloss-hakuun-ryoko>), Dai Bussō], [],
+  [● #gloss-link([Koun Zenshin], <gloss-koun-zenshin>), Dai Bussō], [],
+  [● #gloss-link([Single-Mind Aitken], <gloss-single-mind-aitken>), Dai Bussō], [],
+  [● #gloss-link([Dawn-Cloud Aitken], <gloss-dawn-cloud-aitken>), Dai Bussō], []
+))
 ]
 
-#v(0.4em)
+#v(0.3em)
 
-#speaker([Leader])
-#pad(left: 1.5em)[
-#set text(size: 10pt)
+#speaker([Ino])
+#indented-block[
+#set text(size: 9.8pt)
 All founding teachers, past, present, future, Dai Bussō. \
 Let true Dharma continue, Sangha relations become complete;
 ]
 
-#v(0.4em)
+#v(0.5em)
 
-#speaker([Assembly])
-#pad(left: 1.5em)[
-#set text(size: 10pt)
+#speaker([All])
+#indented-block[
+#set text(size: 9.8pt)
 ● All Buddhas throughout space and time; ○ \
 All Bodhisattvas, Mahasattvas; ○ \
 The great Prajñā pāramitā ○
@@ -124,28 +119,28 @@ The great Prajñā pāramitā ○
 
 = Opening Recitations
 
-#sutra-title("The Four Great Vows", kanji: "四弘誓願文", romaji: "Shigu Seigan Mon", bells: "○ △ ▲")
+#sutra-title("The Four Infinite Vows", kanji: "四弘誓願文", romaji: "Shigu Seigan Mon", bells: "○ △ ▲")
 
-#v(0.8em)
-#set text(size: 11.5pt)
+#v(0.6em)
+#set text(size: 12.5pt)
 #set par(leading: 0.65em)
 
-#zh[shu|jo|mu|hen|sei|gan|do][衆|生|無|邊|誓|願|度] \ 
+#zh_large[shu|jo|mu|hen|sei|gan|do][衆|生|無|邊|誓|願|度] \ 
 #eng[All beings beyond number, I vow to free △³]
 
-#v(0.8em)
+#v(0.65em)
 
-#zh[bon|no|mu|jin|sei|gan|dan][煩|惱|無|盡|誓|願|斷] \ 
+#zh_large[bon|no|mu|jin|sei|gan|dan][煩|惱|無|盡|誓|願|斷] \ 
 #eng[Blind passions without cease, I vow to see through.]
 
-#v(0.8em)
+#v(0.65em)
 
-#zh[ho|mon|mu|ryo|sei|gan|gaku][法|門|無|量|誓|願|學] \ 
-#eng[Dharma gates beyond measure, I vow to realize △³].
+#zh_large[ho|mon|mu|ryo|sei|gan|gaku][法|門|無|量|誓|願|學] \ 
+#eng[Dharma gates beyond measure, I vow to realize △³.]
 
-#v(0.8em)
+#v(0.65em)
 
-#zh[butsu|do|mu|jo|sei|gan|jo][佛|道|無|上|誓|願|成] \ 
+#zh_large[butsu|do|mu|jo|sei|gan|jo][佛|道|無|上|誓|願|成] \ 
 #eng[△ Buddha ways without △³ end, I vow to embody. △³]
 
 #v(1fr)
@@ -315,11 +310,11 @@ Namo tassa bhagavato arahato sammasambuddhasa ○
 
 #pagebreak()
 
-== Zenkai Dedication
+#sutra-title("Zenkai Dedication", kanji: "禪戒回向文", romaji: "Zenkai Ekō Mon")
 #in-gassho()
 
-#speaker([Leader])
-#pad(left: 1.5em)[
+#speaker([Ino])
+#indented-block[
 Our words ring out through space beyond the stars; \
 their virtue and compassion echo back from all the many beings; \
 we recite the "Great Prajñā Pāramitā Heart Sutra" \
@@ -330,8 +325,10 @@ homes and streets, throughout the world, \
 in grateful thanks to all our many guides along the ancient way;
 ]
 
-#speaker([Assembly])
-#pad(left: 1.5em)[
+#v(0.6em)
+
+#speaker([All])
+#indented-block[
 ● All Buddhas throughout space and time; ○ \
 all Bodhisattvas, Mahasattvas; ○ \
 the great Prajñā pāramitā ○.
@@ -348,14 +345,14 @@ the great Prajñā pāramitā ○.
 #sutra-title("Tōrei Zenji: Bodhisattva's Vow", kanji: "菩薩誓願", romaji: "Bodaisatta Seigan", bells: "○ ●")
 #in-gassho()
 
-#speaker([Leader])
-#pad(left: 1.5em)[
+#speaker([Ino])
+#indented-block[
 I am only a simple disciple, ○ \ 
 but I offer these respectful words:
 ]
 
-#speaker([Assembly])
-#pad(left: 1.5em)[
+#speaker([All])
+#indented-block[
 When I regard the true nature of the many dharmas, \
 I find them all to be sacred forms \
 of the Tathagata's never-failing essence. \
@@ -443,10 +440,11 @@ become mature in Buddha's wisdom. ○
 
 #v(1fr)
 
-== Dedication
+#sutra-title("Dedication", kanji: "回向文", romaji: "Ekō Mon")
 #in-gassho()
 
-#v(0.8em)
+#speaker([Ino])
+#indented-block[
 #set text(size: 10.5pt)
 #set par(leading: 0.6em)
 
@@ -454,16 +452,17 @@ The Buddha and his teachers and his many sons and daughters
 turn the Dharma wheel to show the wisdom of the stones and clouds;
 we dedicate the virtues of reciting Tōrei Zenji's Bodhisattva's Vow and the Enmei Jikku Kannon Gyo to:
 
-#pad(left: 1.8em)[
 - Choro Nyogen, Dai Bussō
 - Hannya Gempo, Dai Bussō
 - Mita Soen, Dai Bussō
-]
 
 and to our relatives and companions of the past who rest in deepest samadhi;
+]
+
+#v(0.6em)
 
 #speaker([All])
-#pad(left: 1.5em)[
+#indented-block[
 ● All Buddhas throughout space and time; ○ \
 all Bodhisattvas, Mahasattvas; ○ \
 the great prajna paramita ○
@@ -499,11 +498,11 @@ Of the Tathagata ●¹² ○³
 
 = Evening Sutra Service
 
-#sutra-title("Song of Zazen", kanji: "坐禅讃", romaji: "Hakuin Zenji: Zazen Wasan", bells: "○ ○ ○ ●")
-#in-gassho()
+#sutra-title("Hakuin Zenji: Song of Zazen", kanji: "坐禅讃", romaji: "Zazen Wasan", bells: "○ ○ ○ ●")
 
-#show par: it => block(below: 1.4em, it)
-#set par(leading: 0.65em)
+#v(1.0em)
+#set text(size: 11.5pt)
+#set par(leading: 0.62em)
 
 All beings by nature are Buddha, \
 As ice by nature is water. \
@@ -560,11 +559,11 @@ This very body, the Buddha. ○ \
 
 #pagebreak()
 
-== Dedication
+#sutra-title("Dedication", kanji: "回向文", romaji: "Ekō Mon")
 #in-gassho()
 
 #speaker([Ino])
-#pad(left: 1.5em)[
+#indented-block[
 The sky of Samadhi and the moonlight of wisdom are the temple of our practice; our friends and family members guide us as we walk the ancient path; we dedicate the virtues of reciting Hakuin Zenji's Song of Zazen to:
 
 - Linji Yixuan Dai Bussō [ leen-gee ee-shwen ] 
@@ -573,8 +572,10 @@ The sky of Samadhi and the moonlight of wisdom are the temple of our practice; o
 and to the guardians of the Dharma and the protectors of our sacred hall.
 ]
 
-#speaker([Assembly])
-#pad(left: 1.5em)[
+#v(0.6em)
+
+#speaker([All])
+#indented-block[
 ● All Buddhas throughout space and time, ○ \
 All Bodhisattvas, Mahasattvas, ○ \
 The great Prajñā pāramitā. ○
@@ -688,7 +689,7 @@ With a gentle expression, practice cooperation for all people. Each of these fou
 
 = General Readings
 
-#sutra-title("On Zen", kanji: "大應國師法語", romaji: "Dai-ō Kokushi: Hōgo", bells: "○ ●")
+#sutra-title("Dai-ō Kokushi: On Zen", kanji: "大應國師法語", romaji: "Hōgo", bells: "○ ●")
 
 #show par: it => block(below: 1.4em, it)
 
@@ -1503,7 +1504,7 @@ this is the greatest happiness." ○
 
 #pagebreak()
 
-= Diamond Sangha Jukai \ and Renewal Ceremony
+= Jukai and Renewal Ceremony
 
 #purification()
 
@@ -1513,8 +1514,8 @@ this is the greatest happiness." ○
 
 == Transmission of the Precepts
 
-#speaker([Assembly])
-#pad(left: 1.5em)[
+#speaker([All])
+#indented-block[
 The Great Precepts of all the Buddhas have been maintained and protected by all the Buddhas. Buddhas hand them down to Buddhas, and Ancestral Teachers hand them down to Ancestral Teachers. Acceptance and observance of the Precepts transcends past, present, and future, and form the perfect accord in realization between teacher and disciple, continuing through all ages.
 
 Our great teacher, Shakyamuni Buddha, imparted them to Mahakashyapa and Mahakashyapa transmitted them to Ananda. Already the Precepts have passed through many generations in direct succession, reaching down to the present head of this temple.
@@ -1522,43 +1523,47 @@ Our great teacher, Shakyamuni Buddha, imparted them to Mahakashyapa and Mahakash
 Now, receiving the Great Precepts, I vow to requite my deep obligation to the Buddhas and Ancestral Teachers. I pledge to establish these Precepts as essential teachings for human beings and other beings so that all will inherit the wisdom of the Buddha.
 ]
 
+#pagebreak()
+
 == The Three Vows of Refuge
 
 #speaker([Roshi])
-#pad(left: 1.5em)[I take refuge in the Buddha.]
+#indented-block[I take refuge in the Buddha.]
 #speaker([Initiate])
-#pad(left: 1.5em)[I take refuge in the Buddha...]
+#indented-block[I take refuge in the Buddha...]
 #speaker([Roshi])
-#pad(left: 1.5em)[I take refuge in the Dharma.]
+#indented-block[I take refuge in the Dharma.]
 #speaker([Initiate])
-#pad(left: 1.5em)[I take refuge in the Dharma...]
+#indented-block[I take refuge in the Dharma...]
 #speaker([Roshi])
-#pad(left: 1.5em)[I take refuge in the Sangha.]
+#indented-block[I take refuge in the Sangha.]
 #speaker([Initiate])
-#pad(left: 1.5em)[I take refuge in the Sangha... ○]
+#indented-block[I take refuge in the Sangha... ○]
+
+#pagebreak()
 
 == The Three Pure Precepts
 
 #speaker([Roshi])
-#pad(left: 1.5em)[I vow to maintain the Precepts.]
+#indented-block[I vow to maintain the Precepts.]
 #speaker([Initiate])
-#pad(left: 1.5em)[I vow to maintain the precepts...]
-#speaker([Assembly])
-#pad(left: 1.5em)[This is the cave whence all dharmas of all Buddhas arise.]
+#indented-block[I vow to maintain the precepts...]
+#speaker([All])
+#indented-block[This is the cave whence all dharmas of all Buddhas arise.]
 
 #speaker([Roshi])
-#pad(left: 1.5em)[I vow to practice all good dharmas.]
+#indented-block[I vow to practice all good dharmas.]
 #speaker([Initiate])
-#pad(left: 1.5em)[I vow to practice all good dharmas...]
-#speaker([Assembly])
-#pad(left: 1.5em)[This is the path of fulfilled enlightenment.]
+#indented-block[I vow to practice all good dharmas...]
+#speaker([All])
+#indented-block[This is the path of fulfilled enlightenment.]
 
 #speaker([Roshi])
-#pad(left: 1.5em)[I vow to save the many beings.]
+#indented-block[I vow to save the many beings.]
 #speaker([Initiate])
-#pad(left: 1.5em)[I vow to save the many beings...]
-#speaker([Assembly])
-#pad(left: 1.5em)[Transcending profane and holy, I liberate myself and others. ○]
+#indented-block[I vow to save the many beings...]
+#speaker([All])
+#indented-block[Transcending profane and holy, I liberate myself and others. ○]
 
 == The Ten Grave Precepts
 
@@ -1625,16 +1630,18 @@ to liberate all beings.
 
 The sutras, recitations, and readings in this collection come from traditional Mahayana sources and modern Zen translations:
 
+#indented-block[
 - *Hakuin Zenji: Song of Zazen*: #cite(<richmond1985moon>, form: "prose"). Adapted by Three Treasures Sangha, 2005.
 - *Zazen Universally Recommended (Fukan Zazengi)*: Version by Robert Aitken, based on #cite(<bielefeldt1988dogens>, form: "prose").
 - *Actualizing the Fundamental Point (Genjōkōan)*: #cite(<jaffe1996flowers>, form: "prose").
 - *The Four Virtues of a Bodhisattva (Bodaisatta Shishōbō)*: #cite(<richmond1985moon>, form: "prose"). Adapted by Three Treasures Sangha, 2005.
-- *Song of Enlightenment (Shōdōka)*: Attributed to Yǒngjiā Xuānjué (d. 713). Revisions by #cite(<aitken1991song>, form: "prose").
-- *The Coincidence of Opposites (Sandōkai)*: Attributed to Shītou Xīqiān (700–790). #cite(<foster1996roaring>, form: "prose").
-- *Song of the Grass-Roof Hermitage (Sōan-ka)*: Attributed to Shītou Xīqiān (700–790). #cite(<leighton1987cultivating>, form: "prose").
-- *Verse of the Faith-Mind (Xinxin Ming)*: Attributed to Jiànzhī Sēngcàn (d. 606).
+- *Song of Enlightenment (Shōdōka)*: Attributed to Yǒngjiā Xuānjué [永嘉玄覺] (d. 713). Revisions by #cite(<aitken1991song>, form: "prose").
+- *The Coincidence of Opposites (Sandōkai)*: Attributed to Shītou Xīqiān [石頭希遷] (700–790). #cite(<foster1996roaring>, form: "prose").
+- *Song of the Grass-Roof Hermitage (Sōan-ka)*: Attributed to Shītou Xīqiān [石頭希遷] (700–790). #cite(<leighton1987cultivating>, form: "prose").
+- *Verse of the Faith-Mind (Xinxin Ming)*: Attributed to Jiànzhī Sēngcàn [鑑智僧璨] (d. 606).
 - *Discourse on Love (Metta Sutta)*: Metta Sutta (Suttanipāta 1), adapted by #cite(<hanh1991plum>, form: "prose").
 - *Discourse on Happiness (Mahāmangala Sutta)*: Mahāmangala Sutta (Suttanipāta 1), adapted by #cite(<hanh1991plum>, form: "prose").
+]
 
 #pagebreak()
 
@@ -1644,27 +1651,29 @@ The sutras, recitations, and readings in this collection come from traditional M
 
 / _Ancient Seven Buddhas_ #label("gloss-ancient-seven"): The lineage of Buddhas preceding the historical Śākyamuni, traditionally listed as Vipashyin, Shikhin, Vishvabhu, Krakucchanda, Kanakamuni, Kashyapa, and finally Śākyamuni. They represent the timeless nature of the Dharma, showing that the path to awakening is discovered and re-discovered throughout cosmic time.
 
-/ _Bhadda Kapilani_: A leading female disciple of the Buddha and the former wife of Mahakashyapa. She was renowned among the nuns for her ability to remember her past lives and was a prominent teacher in her own right, often praised for her deep wisdom and commitment to the practice.
+/ _Bhadda Kapilani_ #label("gloss-bhadda-kapilani"): A leading female disciple of the Buddha and the former wife of Mahakashyapa. She was renowned among the nuns for her ability to remember her past lives and was a prominent teacher in her own right, often praised for her deep wisdom and commitment to the practice.
 
-/ _Bodhidharma_ [菩提達磨]: The first Zen patriarch in China, credited with bringing the dhyana (Zen) tradition from India to China. He is famous for his nine years of "wall-gazing" at Shaolin Monastery and his teaching of "pointing directly to the human mind, seeing one’s nature and becoming Buddha."
+/ _Bodhidharma_ #label("gloss-bodhidharma") [菩提達磨]: The first Zen patriarch in China, credited with bringing the dhyana (Zen) tradition from India to China. He is famous for his nine years of "wall-gazing" at Shaolin Monastery and his teaching of "pointing directly to the human mind, seeing one’s nature and becoming Buddha."
 
 / _Bodhisattva_ #label("gloss-bodhisattva"): (Sanskrit: "Awakening Being"). A person who has attained enlightenment but vows to remain in the cycle of birth and death to help all beings achieve liberation.
 
 / _Caoqi_ #label("gloss-caoqi") [曹溪]: (Ts'ao Ch'i). The place in southern China where Huineng, the Sixth Patriarch, lived and taught. It became a major center for the Chan tradition.
 
-/ _Dahui Zonggao_ [大慧宗杲]: A prominent master of the Linji school who popularized the use of koans (kanhua Zen) as a direct means to bypass the intellectual mind and achieve sudden enlightenment. He was a prolific teacher with many lay and female disciples, including Miao Dao and Miao Zong.
+/ _Choro Nyogen (Nyogen Senzaki)_ #label("gloss-choro-nyogen") [千崎如幻]: (1876–1958). A pioneering Japanese Rinzai Zen master who came to the United States in 1905, establishing "floating zendos" in California and transmitting Zen to early Western practitioners.
 
-/ _Daiun Sogaku (Harada)_ [原田大雲祖岳]: A modern Zen master who integrated the Sōtō and Rinzai traditions, emphasizing both zazen and koan practice. He founded the Harada-Yasutani line, which had a major influence on the development of Zen in the West.
+/ _Dahui Zonggao_ #label("gloss-dahui-zonggao") [大慧宗杲]: A prominent master of the Linji school who popularized the use of koans (kanhua Zen) as a direct means to bypass the intellectual mind and achieve sudden enlightenment. He was a prolific teacher with many lay and female disciples, including Miao Dao and Miao Zong.
 
-/ _Dawn-Cloud Aitken (Anne Aitken)_: A co-founder of the Diamond Sangha along with her husband Robert Aitken. She was a quiet but profound presence in the development of Western Zen, providing the organizational and spiritual foundation that allowed the Sangha to flourish.
+/ _Daiun Sogaku (Harada)_ #label("gloss-daiun-sogaku") [原田大雲祖岳]: A modern Zen master who integrated the Sōtō and Rinzai traditions, emphasizing both zazen and koan practice. He founded the Harada-Yasutani line, which had a major influence on the development of Zen in the West.
+
+/ _Dawn-Cloud Aitken (Anne Aitken)_ #label("gloss-dawn-cloud-aitken"): A co-founder of the Diamond Sangha along with her husband Robert Aitken. She was a quiet but profound presence in the development of Western Zen, providing the organizational and spiritual foundation that allowed the Sangha to flourish.
 
 / _Dharma_ #label("gloss-dharma"): (Sanskrit: "Law" or "Truth"). The teachings of the Buddha and the underlying reality of the universe. It also refers to any phenomenon or "thing."
 
 / _Diamond Sangha_ #label("gloss-diamond-sangha"): A lay Zen organization founded by Robert and Anne Aitken in Hawaii in 1959. It is part of the Sanbo Kyodan lineage and has many affiliate groups worldwide.
 
-/ _Dōgen Kigen_ [道元希玄]: The founder of the Sōtō school in Japan. He emphasized the practice of "shikan-taza" (just sitting) and the identity of practice and enlightenment. His masterwork, the /Shobogenzo/, is one of the most profound philosophical texts in the Zen tradition.
+/ _Dōgen Kigen_ #label("gloss-dogen-kigen") [道元希玄]: The founder of the Sōtō school in Japan. He emphasized the practice of "shikan-taza" (just sitting) and the identity of practice and enlightenment. His masterwork, the /Shobogenzo/, is one of the most profound philosophical texts in the Zen tradition.
 
-/ _Dongshan Liangjie_ [洞山良價]: The founder of the Caodong (Sōtō) school in China. A disciple of Yunyan Tansheng, he is famous for formulating the "Five Ranks" (Go-i), which describe the stages of realization and the relationship between the absolute (sho) and the relative (hen).
+/ _Dongshan Liangjie_ #label("gloss-dongshan-liangjie") [洞山良價]: The founder of the Caodong (Sōtō) school in China. A disciple of Yunyan Tansheng, he is famous for formulating the "Five Ranks" (Go-i), which describe the stages of realization and the relationship between the absolute (sho) and the relative (hen).
 
 / _Fei-ni_ #label("gloss-feini"): (Chinese: 肥膩). A rare or mythical Himalayan grass described in traditional Buddhist commentary as nourishing cows to produce pure, delicious milk, symbolizing the rich nourishment of the Dharma.
 
@@ -1672,39 +1681,43 @@ The sutras, recitations, and readings in this collection come from traditional M
 
 / _Hakuin Ekaku_ #label("gloss-hakuin") [白隠慧鶴]: (1686–1769). One of the most important figures in Japanese Zen, he revitalized the Rinzai school and is famous for his teachings on the "Great Doubt" and for the koan "What is the sound of one hand clapping?"
 
-/ _Hakuun Ryoko (Yasutani)_ [安谷白雲量広]: Founder of the Sanbo Kyodan (Three Treasures Association), he worked to make Zen accessible to laypeople and Westerners. His teachings, preserved in /The Three Pillars of Zen/, were fundamental to the spread of Zen beyond Japan.
+/ _Hakuun Ryoko (Yasutani)_ #label("gloss-hakuun-ryoko") [安谷白雲量広]: Founder of the Sanbo Kyodan (Three Treasures Association), he worked to make Zen accessible to laypeople and Westerners. His teachings, preserved in /The Three Pillars of Zen/, were fundamental to the spread of Zen beyond Japan.
+
+/ _Hannya Gempo (Nakagawa Soen)_ #label("gloss-hannya-gempo") [中川宋淵]: (1907–1984). A major Japanese Rinzai Zen master, abbot of Ryutaku-ji, and an influential force in establishing Zen practice centers in North America.
 
 / _Huineng_ #label("gloss-huineng") [惠能]: (638–713). The Sixth Patriarch of Chan (Zen) in China. He is a central figure in Zen history, and his teachings are preserved in the /Platform Sutra/. He emphasized the sudden realization of our own Buddha-nature.
 
 / _Inkin_ #label("gloss-inkin"): (Japanese: [引磬]). A small hand-held bell mounted on a handle and struck with a metal striker, used by the Ino to signal the beginning and end of sections or specific actions.
 
-/ _Jishou Daojen_ [寂照道人]: A female Zen practitioner and Dharma successor of Yuanwu Keqin at Zhaojue Monastery. She achieved awakening through the phrase "It is not mind, it is not Buddha, it is not a thing," and is formally recognized as a realized teacher in the /Jiatai Pudeng Lu/.
+/ _Jishou Daojen_ #label("gloss-jishou-daojen") [寂照道人]: A female Zen practitioner and Dharma successor of Yuanwu Keqin at Zhaojue Monastery. She achieved awakening through the phrase "It is not mind, it is not Buddha, it is not a thing," and is formally recognized as a realized teacher in the /Jiatai Pudeng Lu/.
 
-/ _Keizan Jokin_ [瑩山紹瑾]: The "Second Founder" of the Sōtō school in Japan. A successor to Dōgen, he expanded the school's influence by making it more accessible to the common people and founded Soji-ji, one of the two head temples of the Sōtō school.
+/ _Keizan Jokin_ #label("gloss-keizan-jokin") [瑩山紹瑾]: The "Second Founder" of the Sōtō school in Japan. A successor to Dōgen, he expanded the school's influence by making it more accessible to the common people and founded Soji-ji, one of the two head temples of the Sōtō school.
 
-/ _Koun Zenshin (Yamada)_ [山田耕雲禅心]: Successor to Yasutani Roshi and leader of the Sanbo Kyodan. He was a pivotal figure in the transmission of Zen to the West, serving as a teacher to many influential Western Zen practitioners, including Robert Aitken.
+/ _Koun Zenshin (Yamada)_ #label("gloss-koun-zenshin") [山田耕雲禅心]: Successor to Yasutani Roshi and leader of the Sanbo Kyodan. He was a pivotal figure in the transmission of Zen to the West, serving as a teacher to many influential Western Zen practitioners, including Robert Aitken.
 
 / _Linji Yixuan_ #label("gloss-linji") [臨濟義玄]: (d. 866). The founder of the Linji (Rinzai) school of Zen. He was known for his direct and often shocking teaching methods, such as shouting and hitting, to help students break through their conceptual thinking.
 
-/ _Liu Tiemo (Iron Grindstone Liu)_ [劉鐵磨]: A formidable female Zen master and disciple of Guishan Lingyou. She earned her nickname "Iron Grindstone" for her sharp wit and ability to crush the ego of any monk who challenged her in Dharma combat.
+/ _Liu Tiemo (Iron Grindstone Liu)_ #label("gloss-liu-tiemo") [劉鐵磨]: A formidable female Zen master and disciple of Guishan Lingyou. She earned her nickname "Iron Grindstone" for her sharp wit and ability to crush the ego of any monk who challenged her in Dharma combat.
 
-/ _Mahaprajapati Gautami_ [大愛道]: The Buddha’s aunt and foster mother who became the first Buddhist nun (bhikkhuni). She led the establishment of the female monastic Sangha, demonstrating that women could achieve the highest stages of realization.
+/ _Mahaprajapati Gautami_ #label("gloss-mahaprajapati") [大愛道]: The Buddha’s aunt and foster mother who became the first Buddhist nun (bhikkhuni). She led the establishment of the female monastic Sangha, demonstrating that women could achieve the highest stages of realization.
 
-/ _Mazu Daoji_ [馬祖道一]: A major figure in the "Golden Age" of Chinese Chan and a Dharma heir of Nanyue Huairang. Famous for his teaching that "This Mind is Buddha" and his robust methods of bringing students to awakening.
+/ _Mazu Daoji_ #label("gloss-mazu-daoji") [馬祖道一]: A major figure in the "Golden Age" of Chinese Chan and a Dharma heir of Nanyue Huairang. Famous for his teaching that "This Mind is Buddha" and his robust methods of bringing students to awakening.
 
-/ _Miao Dao_ [妙道]: A highly respected female Zen master and disciple of Dahui Zonggao. She received formal Dharma transmission from Dahui and led her own community, teaching both men and women.
+/ _Miao Dao_ #label("gloss-miao-dao") [妙道]: A highly respected female Zen master and disciple of Dahui Zonggao. She received formal Dharma transmission from Dahui and led her own community, teaching both men and women.
 
-/ _Miao Zong_ [妙總]: A female Zen master and disciple of Dahui Zonggao. Formerly a laywoman of high status, she became a nun and achieved deep realization.
+/ _Miao Zong_ #label("gloss-miao-zong") [妙總]: A female Zen master and disciple of Dahui Zonggao. Formerly a laywoman of high status, she became a nun and achieved deep realization.
+
+/ _Mita Soen (Maurine Stuart)_ #label("gloss-mita-soen"): (1922–1990). A prominent American Zen master and president of the Cambridge Buddhist Association, designated a Zen master by Nakagawa Soen Roshi.
 
 / _Mokugyo_ #label("gloss-mokugyo"): (Japanese: "Wooden Fish" [木魚]). A fish-shaped wooden percussion instrument used in Zen to keep time during chanting.
 
 / _Nirvāṇa_ #label("gloss-nirvana"): (Sanskrit: "Extinguishing"). The cessation of suffering and the cycle of birth and death (samsara). In Zen, Nirvāṇa is realized right here and now.
 
-/ _Pang Lingzhao_ [龐靈照]: The daughter of Layman Pang and a highly realized practitioner. She famously engaged in sharp Zen encounters and passed away in meditation just before her father.
+/ _Pang Lingzhao_ #label("gloss-pang-lingzhao") [龐靈照]: The daughter of Layman Pang and a highly realized practitioner. She famously engaged in sharp Zen encounters and passed away in meditation just before her father.
 
-/ _Pang Yun Jushi (Layman Pang)_ [龐蘊居士]: A celebrated lay Zen master who achieved realization while studying under both Mazu Daoji and Shitou Xiqian. Famous for living a simple, enlightened life with his family.
+/ _Pang Yun Jushi (Layman Pang)_ #label("gloss-pang-yun") [龐蘊居士]: A celebrated lay Zen master who achieved realization while studying under both Mazu Daoji and Shitou Xiqian. Famous for living a simple, enlightened life with his family.
 
-/ _Patacara_: An early female disciple of the Buddha who achieved Arhatship and became a renowned teacher and expert in monastic discipline (Vinaya).
+/ _Patacara_ #label("gloss-patacara"): An early female disciple of the Buddha who achieved Arhatship and became a renowned teacher and expert in monastic discipline (Vinaya).
 
 / _Prajñā pāramitā_ #label("gloss-prajna"): (Sanskrit: "Perfection of Wisdom"). The central concept of Mahayana Buddhism, referring to the wisdom that realizes the emptiness of all phenomena.
 
@@ -1712,19 +1725,19 @@ The sutras, recitations, and readings in this collection come from traditional M
 
 / _Saṅgha_ #label("gloss-sangha"): (Sanskrit: "Community"). The community of Buddhist practitioners, including monastics and laypeople.
 
-/ _Śākyamuni Buddha_ [釋迦牟尼佛]: The historical founder of Buddhism. Born as Siddhartha Gautama in the Shakya clan, he attained supreme enlightenment under the Bodhi tree.
+/ _Śākyamuni Buddha_ #label("gloss-sakyamuni") [釋迦牟尼佛]: The historical founder of Buddhism. Born as Siddhartha Gautama in the Shakya clan, he attained supreme enlightenment under the Bodhi tree.
 
-/ _Shitou Xiqian_ [石頭希遷]: A key figure in early Chinese Chan. Author of the /Sandokai/ and the /Song of the Grass-Roof Hermitage/, central to the Sōtō Zen liturgy.
+/ _Shitou Xiqian_ #label("gloss-shitou-xiqian") [石頭希遷]: A key figure in early Chinese Chan. Author of the /Sandokai/ and the /Song of the Grass-Roof Hermitage/, central to the Sōtō Zen liturgy.
 
 / _Shravaka_: (Sanskrit: "Voice-hearer"). A practitioner who hears the Buddha's teaching and strives for liberation, traditionally referring to early disciples and monastics.
 
-/ _Single-Mind Aitken (Robert Aitken)_: A co-founder of the Diamond Sangha and a pioneering figure in Western Zen. Known for his integration of social justice and Buddhist practice.
+/ _Single-Mind Aitken (Robert Aitken)_ #label("gloss-single-mind-aitken"): A co-founder of the Diamond Sangha and a pioneering figure in Western Zen. Known for his integration of social justice and Buddhist practice.
 
 / _Skandhas_ #label("gloss-skandhas"): (Sanskrit: "Aggregates"). The five components that make up a person: form, sensation, perception, mental formation, and consciousness.
 
 / _Three Treasures Sangha_ #label("gloss-tts"): A lay Zen group in Seattle, Washington, affiliated with the Diamond Sangha.
 
-/ _Vimalakirti_ [維摩詰]: A legendary lay contemporary of the Buddha who exemplified the ideal of the "lay bodhisattva" in the Vimalakirti Sutra.
+/ _Vimalakirti_ #label("gloss-vimalakirti") [維摩詰]: A legendary lay contemporary of the Buddha who exemplified the ideal of the "lay bodhisattva" in the Vimalakirti Sutra.
 
 #in-glossary.update(false)
 
