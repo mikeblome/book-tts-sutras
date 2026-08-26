@@ -1,6 +1,7 @@
 /clerk_stderr.log
 /clerk_stdout.log
 /public/
+/references/
 /.clerk/
 /.clj-config/
 /.clj-tools/
