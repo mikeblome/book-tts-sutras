@@ -2,6 +2,7 @@
 // Functions we will import for use in the sutra book
 
 #let in-glossary = state("in-glossary", false)
+#let in-heading = state("in-heading", false)
 
 // A helper macro to wrap any content in a classed <span> for JS to find.
 #let classed-span(classname, content) = {
@@ -27,11 +28,11 @@
   classed-span("lang-en", content)
 }
 
-// Helper for glossary links
+// Helper for glossary links (disabled within glossary and headings)
 #let gloss-link(it, target) = {
   if sys.inputs.at("target", default: "pdf") == "html" {
     context {
-      if in-glossary.get() {
+      if in-glossary.get() or in-heading.get() {
         it
       } else {
         classed-span("glossary-link", link(target, it))
@@ -42,117 +43,143 @@
   }
 }
 
-// Helper for centered stage directions
-#let in-gassho() = align(center, text(style: "italic", size: 0.95em)[in gassho])
+// Helpers for subtitles and stage directions
+#let under-title-note(body) = align(center, text(style: "italic", size: 0.95em, body))
+#let subtitle(body) = align(center, text(style: "italic", size: 0.95em, body))
+#let in-gassho() = under-title-note[in gassho]
 
-// Reusable liturgical inclusions
-#let purification() = [
-== ○ ○ ○ ● Purification ○
-#in-gassho()
+// Helper for indented blocks that preserves content in HTML export
+#let indented-block(body) = {
+  if sys.inputs.at("target", default: "pdf") == "html" {
+    classed-block("indented-block", body)
+  } else {
+    pad(left: 1.5em, body)
+  }
+}
 
-All the evil karma ever created by me since of old, ○³ \
-on account of my beginningless greed, hatred, and ignorance, \
-born of my conduct, speech and thought, \
-I ○³ now confess ○³ openly and  fully. ●¹² ○³
-]
+// Standardized trilingual sutra title helper (English, Kanji, Romaji)
+#let sutra-title(eng, kanji: none, romaji: none, bells: "") = {
+  let show-ino-input = sys.inputs.at("show-ino-notation", default: "false") == "true"
+  let is-html = sys.inputs.at("target", default: "pdf") == "html"
+  
+  if is-html {
+    in-heading.update(true)
+    heading(level: 2)[#eng]
+    in-heading.update(false)
 
-#let ti-sarana() = [
-== ○ ○ ○ ● Ti-Sarana
-#in-gassho()
+    if kanji != none or romaji != none {
+      classed-block("sutra-subtitle", [
+        #if kanji != none [#classed-span("lang-zh", kanji)]
+        #if kanji != none and romaji != none [#classed-span("subtitle-bullet", [ • ])]
+        #if romaji != none [#classed-span("lang-ro", romaji)]
+      ])
+    }
+  } else {
+    let title-text = if show-ino-input and bells != "" { bells + " " + eng } else { eng }
+    heading(level: 2)[#title-text]
+    if kanji != none or romaji != none {
+      v(-0.2em)
+      align(center)[
+        #if kanji != none [#text(size: 1.05em, font: ("Noto Serif CJK JP", "Noto Serif CJK SC"))[#kanji]]
+        #if kanji != none and romaji != none [ #text(size: 0.8em, fill: luma(120))[•] ]
+        #if romaji != none [#text(size: 0.95em, style: "italic", font: ("EB Garamond 12", "Libertinus Serif"))[#romaji]]
+      ]
+      v(0.4em)
+    }
+  }
+}
 
-Buddham saranam gacchami; \
-dhammam saranam gacchami; \
-sangham saranam gacchami. \
+// Helper for liturgical speakers (distinctive display style for Roshi, Assembly, Initiate, etc.)
+#let speaker(name) = {
+  v(0.9em, weak: true)
+  text(font: "Libertinus Serif Display", weight: "bold", style: "italic", size: 1.05em, fill: luma(40))[#name:]
+}
 
-#v(1em)
-
-I take refuge in the Buddha; \
-I take refuge in the Dharma; \
-I take refuge in the Sangha. \
-
-#v(1em)
-
-Buddham saranam gacchami; \
-dhammam saranam gacchami; \
-sangham saranam gacchami. ○
-]
-
-#let sesshin-dedication() = [
-== Sesshin Dedication
-#in-gassho()
-
-*Leader:*
-Buddha nature pervades the whole universe, existing right here now. With our reciting of "The Great Prajñā pāramitā Heart Sutra" (Maka Hannya Haramita Shingyō) and the "Sho Sai Myo Kichijo Dharani," let us unite with:
-
-#v(0.4em)
-
-*Assembly:*
-
-#set text(size: 10.5pt)
-#grid(
-  columns: (auto, 1fr),
-  column-gutter: 1.2em,
-  row-gutter: 0.28em,
-  [● The Ancient Seven Buddhas, Dai Bussō], [],
-  [● Śākyamuni Buddha, Dai Bussō], [],
-  [● Mahaprajapati Gautami, Dai Bussō], text(style: "italic", size: 0.88em)[maha prajāpati go'tami],
-  [● Vimalakirti, Dai Bussō], text(style: "italic", size: 0.88em)[vi'mala kīrti],
-  [● Patacara, Dai Bussō], text(style: "italic", size: 0.88em)[p'ta chāra],
-  [● Bhadda Kapilani, Dai Bussō], text(style: "italic", size: 0.88em)[b'da kapilāni],
-  [● Bodhidharma, Dai Bussō], [],
-  [● Shitou Xiqian, Dai Bussō], text(style: "italic", size: 0.88em)[shure'-toe she-chwen],
-  [● Mazu Daoji, Dai Bussō], text(style: "italic", size: 0.88em)[ma'-zoo dao'-ee],
-  [● Dongshan Liangjie, Dai Bussō], text(style: "italic", size: 0.88em)[dong-shan liang-jay],
-  [● Pang Yun Jushi, Dai Bussō], text(style: "italic", size: 0.88em)[pong yun jew-sure],
-  [● Pang Lingzhao, Dai Bussō], text(style: "italic", size: 0.88em)[pong ling-jao],
-  [● Liu Tiemo, Dai Bussō], text(style: "italic", size: 0.88em)[leo tyeh'-mo],
-  [● Jishou Daojen, Dai Bussō], text(style: "italic", size: 0.88em)[jee-show dow-ren],
-  [● Dahui Zonggao, Dai Bussō], text(style: "italic", size: 0.88em)[da-whey zong-gao],
-  [● Miao Dao, Dai Bussō], text(style: "italic", size: 0.88em)[meow dow],
-  [● Miao Zong, Dai Bussō], text(style: "italic", size: 0.88em)[meow zong],
-  [● Dōgen Kigen, Dai Bussō], [],
-  [● Keizan Jokin, Dai Bussō], [],
-  [● Daiun Sogaku, Dai Bussō], [],
-  [● Hakuun Ryoko, Dai Bussō], [],
-  [● Koun Zenshin, Dai Bussō], [],
-  [● Single-Mind Aitken, Dai Bussō], [],
-  [● Dawn-Cloud Aitken, Dai Bussō], []
-)
-
-#v(0.4em)
-
-*Leader:*
-All founding teachers, past, present, future, Dai Bussō. \
-Let true Dharma continue, Sangha relations become complete; \
-
-#v(0.4em)
-
-*Assembly:*
-● All Buddhas throughout space and time; ○ \
-All Bodhisattvas, Mahasattvas; ○ \
-The great Prajñā pāramitā ○
-]
 
 // Helper for ruby annotations
 #let above(word, top) = {
-  let zh_size = 1.3em
-  let ro_size = 0.72em
+  let zh_size = 1.5em
+  let ro_size = 1.15em
 
   if sys.inputs.at("target", default: "pdf") == "html" {
     html.elem("ruby", [
       #classed-span("lang-zh", text(size: zh_size, word))
-      #html.elem("rt", classed-span("lang-ro", text(size: ro_size, top)))
+      #html.elem("rt", classed-span("lang-ro", text(size: ro_size, weight: "semibold", top)))
     ])
   } else {
     box(
       inset: (x: 0.18em, y: 0pt),
       grid(
         columns: 1,
-        gutter: 4pt,
+        gutter: 6pt,
         align: center + horizon,
-        text(font: ("EB Garamond 12", "Libertinus Serif"), size: ro_size, top),
+        text(font: ("EB Garamond 12", "Libertinus Serif"), size: ro_size, weight: "semibold", top),
         text(font: ("Noto Serif CJK JP", "Noto Serif CJK SC"), weight: "regular", size: zh_size, word)
       )
+    )
+  }
+}
+
+// Helper for large ruby annotations (e.g. Four Infinite Vows)
+#let above_large(word, top) = {
+  let zh_size = 2.2em
+  let ro_size = 1.4em
+
+  if sys.inputs.at("target", default: "pdf") == "html" {
+    html.elem("ruby", [
+      #classed-span("lang-zh", text(size: zh_size, word))
+      #html.elem("rt", classed-span("lang-ro", text(size: ro_size, weight: "semibold", top)))
+    ])
+  } else {
+    box(
+      inset: (x: 0.28em, y: 0pt),
+      grid(
+        columns: 1,
+        gutter: 8pt,
+        align: center + horizon,
+        text(font: ("EB Garamond 12", "Libertinus Serif"), size: ro_size, weight: "semibold", top),
+        text(font: ("Noto Serif CJK JP", "Noto Serif CJK SC"), weight: "regular", size: zh_size, word)
+      )
+    )
+  }
+}
+
+#let zh_large(left, right) = {
+  let left_array = left.text.split("|")
+  let right_array = right.text.split("|")
+
+  if left_array.len() != right_array.len() {
+    panic("Ruby text has imbalanced sides.")
+  }
+
+  let ruby_content = {
+    let sum_body = () 
+    for i in range(left_array.len()) {
+      sum_body += (
+        above_large(
+          text(right_array.at(i)),
+          text(size: 1em, left_array.at(i))
+        ),
+      )
+    }
+    sum_body.join()
+  }
+
+  text(lang: "zh", ruby_content)
+}
+
+// Reusable helper macro for lineage names grid
+#let lineage-names-grid(items) = {
+  if sys.inputs.at("target", default: "pdf") == "html" {
+    classed-block("lineage-grid", items.join(" "))
+  } else {
+    set text(size: 8.8pt)
+    set par(leading: 0.38em)
+    grid(
+      columns: (auto, 1fr),
+      column-gutter: 1.2em,
+      row-gutter: 0.22em,
+      ..items
     )
   }
 }

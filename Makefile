@@ -1,4 +1,5 @@
 SRC = src/sutra_book.typ
+DEPS = src/sutra_book.typ src/style.typ src/lib.typ
 PUBLIC = public
 
 HTML_OUT = $(PUBLIC)/sutra_book.html
@@ -22,17 +23,21 @@ $(PUBLIC):
 
 html: $(HTML_OUT)
 
-$(HTML_OUT): $(SRC) | $(PUBLIC)
+$(HTML_OUT): $(DEPS) assets/style.css assets/interactivity.js | $(PUBLIC)
 	typst compile --root . $(SRC) $(HTML_OUT) --features html --input show-ino-notation=false --input target=html $(FONT_PATHS)
+	sed -i 's|</head>|<link rel="stylesheet" href="style.css"><script src="interactivity.js" defer></script></head>|' $(HTML_OUT)
+	cp assets/style.css $(PUBLIC)/style.css
+	cp assets/interactivity.js $(PUBLIC)/interactivity.js
+	cp $(HTML_OUT) $(PUBLIC)/index.html
 
 ino-pdf: $(INO_PDF_OUT)
 
-$(INO_PDF_OUT): $(SRC) | $(PUBLIC)
+$(INO_PDF_OUT): $(DEPS) | $(PUBLIC)
 	typst compile --root . $(SRC) $(INO_PDF_OUT) --input show-ino-notation=true $(FONT_PATHS)
 
 print-pdf: $(PRINT_PDF_OUT)
 
-$(PRINT_PDF_OUT): $(SRC) | $(PUBLIC)
+$(PRINT_PDF_OUT): $(DEPS) | $(PUBLIC)
 	typst compile --root . $(SRC) $(PRINT_PDF_OUT) --input show-ino-notation=false $(FONT_PATHS)
 
 clean:

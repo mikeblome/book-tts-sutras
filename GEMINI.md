@@ -26,8 +26,6 @@
 - [x] Add more explanatory notes to the notes: we want to explain sanskrit, chinese, and japanese terms like _prajna paramita_ and _skandhas_ and everything else
   - [x] In the HTML version, automated hyperlinks to the glossary.
   - [x] Toggle-able via the sidebar.
-
-## New Tasks
 - [x] Add github action based on nix which runs make and has all the requisite tools installed
 - [x] Fix bibliography. On page 47 of "Ino Book 2023.pdf" there is a list of sources. Make sure each text with a source has a related bibliographic entry. 
 - [x] Fix ruby text display: the ruby annotations above chinese characters don't have enough whitespace around them to be readable as syllables. Find a way to give these enough space and also make the chinese character spacing consistent. How does latex do it? Find a way to make it beautiful. 
@@ -54,8 +52,6 @@
 - [x] **Bibliography Hanging Indents**: Set Chicago author-date hanging indents for bibliography entries.
 - [x] **Sesshin Dedication Phonetics**: Clean up capitalization and diacritics in phonetic guides on page 14 (e.g., `prajāpati`, `kīrti`, `chāra`, `kapilāni`).
 
-
-
 ## Completed Tasks
 - [x] Bibliography and Hayagriva setup.
 - [x] Glossary with automated linking and state management (to avoid linking within the glossary itself).
@@ -66,3 +62,23 @@
 - [x] Fixed all-caps in H1 headers.
 - [x] Tripled size of Chinese characters and Ruby text.
 - [x] Global newline-to-linebreak rule for verse-heavy content.
+
+## New Tasks
+ - [x] Ensure that we have reasonable spacing between paragraphs
+ - [x] Fix unusual spacing in table of contents: Ti-Sarana, Vandana, On Opening the Dharma, and more, (find them!) have uneven spacing before their entries in the table of contents 
+ - [x] The ruby annotations (romaji above the chinese characters) needs to be way bigger 
+ - [x] We need a Chinese character (Japanese) translation of Shiku Seigan Mon. Also is that Shigu or Shiku? 
+ - [x] Everything that can be bigger on the page should be. For example, the romaji above the chinese characters in Shiku Seigan Mon 
+ - [x] Cases where there are a single line on a page should be merged with the previous page, or the font size should be adjusted so that there are at least two lines on the page. Page 13 is one
+ - [x] Cases where there is "Leader:" and "Assembly" should be indented a little to indicate that they are said by those people
+ - [x] "in gassho" should always be centered under the sutra
+ - [x] Let's not have footnotes appear after the first word. Instead maybe we can move away from footnotes entirely and just have a Sources section 
+ - [x] Places like Dedication (page 24) which only have a few lines and then only a few lines on the next page should be made into their own page 
+ - [x] Is Song of Enlightenment and others just one stanza? Why does it look like just one stanza? 
+ - [x] Song of the Grass-Roof Hermitage should start on its own page, same with Verse of the Faith-Mind and Discourse on Love and Discourse on Happiness. 
+ - [x] In the Jukai Ceremony, "Assembly" is not a heading, it's who says it 
+ - [x] Starting on page 66, there should be some space between Roshi, Initiate, etc. 
+ - [x] In the Glossary the terms should be in italics or something to show that they're a term 
+ - [x] The DIscourse on Happiness is also missing stanza breaks 
+ - [x] Let's not have style in the actual text. Style should be in style.typ or lib.typ. Similarly let's not have any text in sutra_book.typ. If we need a new function, like for subtitles, as in Dharani for Dispelling Misfortune, let's make a new function "subtitles" which makes it centered and smaller type. Never do something like ` #align(center, text(style: "italic", size: 0.95em)[(Dharani for Dispelling Misfortune)])` because that mixes style and content. 
+ - [x] Let's have a function like under_title_note() note which can handle things like "in gassho" so that we don't have to center it each time 
